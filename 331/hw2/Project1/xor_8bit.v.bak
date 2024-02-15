@@ -1,0 +1,31 @@
+module or_4bit (
+	output [3:0] out,
+	input [3:0] ain,
+	input [3:0] bin
+);
+
+	my_or (
+		.out(out[0]),
+		.ain(ain[0]),
+		.bin(bin[0])
+	);
+	
+	my_or (
+		.out(out[1]),
+		.ain(ain[1]),
+		.bin(bin[1])
+	);
+	
+	my_or (
+		.out(out[2]),
+		.ain(ain[2]),
+		.bin(bin[2])
+	);
+	
+	my_or (
+		.out(out[3]),
+		.ain(ain[3]),
+		.bin(bin[3])
+	);
+
+endmodule

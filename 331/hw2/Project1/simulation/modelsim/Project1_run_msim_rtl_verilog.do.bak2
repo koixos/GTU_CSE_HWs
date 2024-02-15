@@ -1,0 +1,11 @@
+transcript on
+if {[file exists rtl_work]} {
+	vdel -lib rtl_work -all
+}
+vlib rtl_work
+vmap work rtl_work
+
+vlog -vlog01compat -work work +incdir+C:/Project1 {C:/Project1/my_and.v}
+vlog -vlog01compat -work work +incdir+C:/Project1 {C:/Project1/my_or.v}
+vlog -vlog01compat -work work +incdir+C:/Project1 {C:/Project1/my_xor.v}
+

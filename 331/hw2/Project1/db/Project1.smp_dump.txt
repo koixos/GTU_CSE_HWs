@@ -1,0 +1,8 @@
+
+State Machine - |alu|mod:mod1|mod_cu:cu|curr_state
+Name curr_state.COMP curr_state.ASSGN curr_state.SUB curr_state.START curr_state.END 
+curr_state.START 0 0 0 0 0 
+curr_state.SUB 0 0 1 1 0 
+curr_state.ASSGN 0 1 0 1 0 
+curr_state.COMP 1 0 0 1 0 
+curr_state.END 0 0 0 1 1 

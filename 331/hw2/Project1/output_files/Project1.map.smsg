@@ -1,0 +1,2 @@
+Info (10281): Verilog HDL Declaration information at mod_cu.v(6): object "assgn" differs only in case from object "ASSGN" in the same scope File: C:/Project1/mod_cu.v Line: 6
+Warning (10268): Verilog HDL information at mod_dp.v(18): always construct contains both blocking and non-blocking assignments File: C:/Project1/mod_dp.v Line: 18

@@ -1,0 +1,17 @@
+module less_than_32bit (
+	output [31:0] out,
+	input [31:0] ain,
+	input [31:0] bin
+);
+
+	wire [31:0] tmp [1:0];
+
+	comparator_32bit (
+		.greater(tmp[0]),
+		.less(out),
+		.equal(tmp[1]),
+		.ain(ain),
+		.bin(bin)
+	);
+
+endmodule

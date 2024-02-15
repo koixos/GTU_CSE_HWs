@@ -1,0 +1,73 @@
+module mux81 (
+	output [31:0] out,
+	input [31:0] inp [7:0],
+	input [2:0] control
+);
+
+	wire [31:0] w [7:0];
+
+	and41 and41_1(
+		.out(w[0]),
+		.ain(inp[0]),
+		.bin(!control[0]),
+		.cin(!control[1]),
+		.din(!control[2]),
+	);
+	
+	and41 and41_2(
+		.out(w[1]),
+		.ain(inp[1]),
+		.bin(control[0]),
+		.cin(!control[1]),
+		.din(!control[2]),
+	);
+	
+	and41 and41_3(
+		.out(w[2]),
+		.ain(inp[2]),
+		.bin(!control[0]),
+		.cin(control[1]),
+		.din(!control[2]),
+	);
+	
+	and41 and41_4(
+		.out(w[3]),
+		.ain(inp[3]),
+		.bin(control[0]),
+		.cin(control[1]),
+		.din(!control[2]),
+	);
+	
+	and41 and41_5(
+		.out(w[4]),
+		.ain(inp[4]),
+		.bin(!control[0]),
+		.cin(!control[1]),
+		.din(control[2]),
+	);
+	
+	and41 and41_6(
+		.out(w[5]),
+		.ain(inp[5]),
+		.bin(control[0]),
+		.cin(!control[1]),
+		.din(control[2]),
+	);
+	
+	and41 and41_7(
+		.out(w[6]),
+		.ain(inp[6]),
+		.bin(!control[0]),
+		.cin(control[1]),
+		.din(control[2]),
+	);
+	
+	and41 and41_8(
+		.out(w[7]),
+		.ain(inp[7]),
+		.bin(control[0]),
+		.cin(control[1]),
+		.din(control[2]),
+	);
+
+endmodule

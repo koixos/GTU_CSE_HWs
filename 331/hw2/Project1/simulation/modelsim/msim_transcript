@@ -1,0 +1,517 @@
+# Reading pref.tcl
+# do Project1_run_msim_rtl_verilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work rtl_work 
+# Copying C:/intelFPGA_lite/20.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vlog -vlog01compat -work work +incdir+C:/Project1 {C:/Project1/and_4bit.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 23:02:08 on Dec 10,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Project1" C:/Project1/and_4bit.v 
+# -- Compiling module and_4bit
+# 
+# Top level modules:
+# 	and_4bit
+# End time: 23:02:08 on Dec 10,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Project1 {C:/Project1/alu.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 23:02:08 on Dec 10,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Project1" C:/Project1/alu.v 
+# -- Compiling module alu
+# 
+# Top level modules:
+# 	alu
+# End time: 23:02:08 on Dec 10,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Project1 {C:/Project1/mux81_32bit.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 23:02:08 on Dec 10,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Project1" C:/Project1/mux81_32bit.v 
+# -- Compiling module mux81_32bit
+# 
+# Top level modules:
+# 	mux81_32bit
+# End time: 23:02:08 on Dec 10,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Project1 {C:/Project1/and41_32bit.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 23:02:08 on Dec 10,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Project1" C:/Project1/and41_32bit.v 
+# -- Compiling module and41_32bit
+# 
+# Top level modules:
+# 	and41_32bit
+# End time: 23:02:08 on Dec 10,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Project1 {C:/Project1/or81_32bit.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 23:02:08 on Dec 10,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Project1" C:/Project1/or81_32bit.v 
+# -- Compiling module or81_32bit
+# 
+# Top level modules:
+# 	or81_32bit
+# End time: 23:02:08 on Dec 10,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Project1 {C:/Project1/and_32bit.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 23:02:08 on Dec 10,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Project1" C:/Project1/and_32bit.v 
+# -- Compiling module and_32bit
+# 
+# Top level modules:
+# 	and_32bit
+# End time: 23:02:08 on Dec 10,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Project1 {C:/Project1/or_32bit.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 23:02:08 on Dec 10,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Project1" C:/Project1/or_32bit.v 
+# -- Compiling module or_32bit
+# 
+# Top level modules:
+# 	or_32bit
+# End time: 23:02:09 on Dec 10,2023, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Project1 {C:/Project1/and_8bit.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 23:02:09 on Dec 10,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Project1" C:/Project1/and_8bit.v 
+# -- Compiling module and_8bit
+# 
+# Top level modules:
+# 	and_8bit
+# End time: 23:02:09 on Dec 10,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Project1 {C:/Project1/and_16bit.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 23:02:09 on Dec 10,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Project1" C:/Project1/and_16bit.v 
+# -- Compiling module and_16bit
+# 
+# Top level modules:
+# 	and_16bit
+# End time: 23:02:09 on Dec 10,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Project1 {C:/Project1/or_4bit.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 23:02:09 on Dec 10,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Project1" C:/Project1/or_4bit.v 
+# -- Compiling module or_4bit
+# 
+# Top level modules:
+# 	or_4bit
+# End time: 23:02:09 on Dec 10,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Project1 {C:/Project1/or_8bit.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 23:02:09 on Dec 10,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Project1" C:/Project1/or_8bit.v 
+# -- Compiling module or_8bit
+# 
+# Top level modules:
+# 	or_8bit
+# End time: 23:02:09 on Dec 10,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Project1 {C:/Project1/or_16bit.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 23:02:09 on Dec 10,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Project1" C:/Project1/or_16bit.v 
+# -- Compiling module or_16bit
+# 
+# Top level modules:
+# 	or_16bit
+# End time: 23:02:09 on Dec 10,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Project1 {C:/Project1/xor_4bit.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 23:02:09 on Dec 10,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Project1" C:/Project1/xor_4bit.v 
+# -- Compiling module xor_4bit
+# 
+# Top level modules:
+# 	xor_4bit
+# End time: 23:02:09 on Dec 10,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Project1 {C:/Project1/xor_8bit.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 23:02:09 on Dec 10,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Project1" C:/Project1/xor_8bit.v 
+# -- Compiling module xor_8bit
+# 
+# Top level modules:
+# 	xor_8bit
+# End time: 23:02:09 on Dec 10,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Project1 {C:/Project1/xor_16bit.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 23:02:09 on Dec 10,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Project1" C:/Project1/xor_16bit.v 
+# -- Compiling module xor_16bit
+# 
+# Top level modules:
+# 	xor_16bit
+# End time: 23:02:09 on Dec 10,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Project1 {C:/Project1/xor_32bit.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 23:02:09 on Dec 10,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Project1" C:/Project1/xor_32bit.v 
+# -- Compiling module xor_32bit
+# 
+# Top level modules:
+# 	xor_32bit
+# End time: 23:02:09 on Dec 10,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Project1 {C:/Project1/nor_4bit.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 23:02:09 on Dec 10,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Project1" C:/Project1/nor_4bit.v 
+# -- Compiling module nor_4bit
+# 
+# Top level modules:
+# 	nor_4bit
+# End time: 23:02:10 on Dec 10,2023, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Project1 {C:/Project1/nor_8bit.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 23:02:10 on Dec 10,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Project1" C:/Project1/nor_8bit.v 
+# -- Compiling module nor_8bit
+# 
+# Top level modules:
+# 	nor_8bit
+# End time: 23:02:10 on Dec 10,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Project1 {C:/Project1/nor_16bit.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 23:02:10 on Dec 10,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Project1" C:/Project1/nor_16bit.v 
+# -- Compiling module nor_16bit
+# 
+# Top level modules:
+# 	nor_16bit
+# End time: 23:02:10 on Dec 10,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Project1 {C:/Project1/nor_32bit.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 23:02:10 on Dec 10,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Project1" C:/Project1/nor_32bit.v 
+# -- Compiling module nor_32bit
+# 
+# Top level modules:
+# 	nor_32bit
+# End time: 23:02:10 on Dec 10,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Project1 {C:/Project1/comparator_32bit.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 23:02:10 on Dec 10,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Project1" C:/Project1/comparator_32bit.v 
+# -- Compiling module comparator_32bit
+# 
+# Top level modules:
+# 	comparator_32bit
+# End time: 23:02:10 on Dec 10,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Project1 {C:/Project1/not_4bit.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 23:02:10 on Dec 10,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Project1" C:/Project1/not_4bit.v 
+# -- Compiling module not_4bit
+# 
+# Top level modules:
+# 	not_4bit
+# End time: 23:02:10 on Dec 10,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Project1 {C:/Project1/not_8bit.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 23:02:10 on Dec 10,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Project1" C:/Project1/not_8bit.v 
+# -- Compiling module not_8bit
+# 
+# Top level modules:
+# 	not_8bit
+# End time: 23:02:10 on Dec 10,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Project1 {C:/Project1/not_16bit.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 23:02:10 on Dec 10,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Project1" C:/Project1/not_16bit.v 
+# -- Compiling module not_16bit
+# 
+# Top level modules:
+# 	not_16bit
+# End time: 23:02:10 on Dec 10,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Project1 {C:/Project1/not_32bit.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 23:02:10 on Dec 10,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Project1" C:/Project1/not_32bit.v 
+# -- Compiling module not_32bit
+# 
+# Top level modules:
+# 	not_32bit
+# End time: 23:02:11 on Dec 10,2023, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Project1 {C:/Project1/comparator_4bit.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 23:02:11 on Dec 10,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Project1" C:/Project1/comparator_4bit.v 
+# -- Compiling module comparator_4bit
+# 
+# Top level modules:
+# 	comparator_4bit
+# End time: 23:02:11 on Dec 10,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Project1 {C:/Project1/comparator_2bit.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 23:02:11 on Dec 10,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Project1" C:/Project1/comparator_2bit.v 
+# -- Compiling module comparator_2bit
+# 
+# Top level modules:
+# 	comparator_2bit
+# End time: 23:02:11 on Dec 10,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Project1 {C:/Project1/comparator_8bit.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 23:02:11 on Dec 10,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Project1" C:/Project1/comparator_8bit.v 
+# -- Compiling module comparator_8bit
+# 
+# Top level modules:
+# 	comparator_8bit
+# End time: 23:02:11 on Dec 10,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Project1 {C:/Project1/comparator_16bit.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 23:02:11 on Dec 10,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Project1" C:/Project1/comparator_16bit.v 
+# -- Compiling module comparator_16bit
+# 
+# Top level modules:
+# 	comparator_16bit
+# End time: 23:02:11 on Dec 10,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Project1 {C:/Project1/less_than_32bit.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 23:02:11 on Dec 10,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Project1" C:/Project1/less_than_32bit.v 
+# -- Compiling module less_than_32bit
+# 
+# Top level modules:
+# 	less_than_32bit
+# End time: 23:02:11 on Dec 10,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Project1 {C:/Project1/cla_4bit.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 23:02:11 on Dec 10,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Project1" C:/Project1/cla_4bit.v 
+# -- Compiling module cla_4bit
+# 
+# Top level modules:
+# 	cla_4bit
+# End time: 23:02:11 on Dec 10,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Project1 {C:/Project1/cla_2bit.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 23:02:11 on Dec 10,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Project1" C:/Project1/cla_2bit.v 
+# -- Compiling module cla_2bit
+# 
+# Top level modules:
+# 	cla_2bit
+# End time: 23:02:11 on Dec 10,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Project1 {C:/Project1/prop_gen_generator.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 23:02:11 on Dec 10,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Project1" C:/Project1/prop_gen_generator.v 
+# -- Compiling module prop_gen_generator
+# 
+# Top level modules:
+# 	prop_gen_generator
+# End time: 23:02:11 on Dec 10,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Project1 {C:/Project1/cla_8bit.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 23:02:11 on Dec 10,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Project1" C:/Project1/cla_8bit.v 
+# -- Compiling module cla_8bit
+# 
+# Top level modules:
+# 	cla_8bit
+# End time: 23:02:11 on Dec 10,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Project1 {C:/Project1/cla_16bit.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 23:02:11 on Dec 10,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Project1" C:/Project1/cla_16bit.v 
+# -- Compiling module cla_16bit
+# 
+# Top level modules:
+# 	cla_16bit
+# End time: 23:02:11 on Dec 10,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Project1 {C:/Project1/cla_32bit.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 23:02:12 on Dec 10,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Project1" C:/Project1/cla_32bit.v 
+# -- Compiling module cla_32bit
+# 
+# Top level modules:
+# 	cla_32bit
+# End time: 23:02:12 on Dec 10,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Project1 {C:/Project1/subtractor_32bit.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 23:02:12 on Dec 10,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Project1" C:/Project1/subtractor_32bit.v 
+# -- Compiling module subtractor_32bit
+# 
+# Top level modules:
+# 	subtractor_32bit
+# End time: 23:02:12 on Dec 10,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Project1 {C:/Project1/mod.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 23:02:12 on Dec 10,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Project1" C:/Project1/mod.v 
+# -- Compiling module mod
+# 
+# Top level modules:
+# 	mod
+# End time: 23:02:12 on Dec 10,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Project1 {C:/Project1/mod_cu.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 23:02:12 on Dec 10,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Project1" C:/Project1/mod_cu.v 
+# -- Compiling module mod_cu
+# 
+# Top level modules:
+# 	mod_cu
+# End time: 23:02:12 on Dec 10,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Project1 {C:/Project1/mod_dp.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 23:02:12 on Dec 10,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Project1" C:/Project1/mod_dp.v 
+# -- Compiling module mod_dp
+# 
+# Top level modules:
+# 	mod_dp
+# End time: 23:02:12 on Dec 10,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vlog -vlog01compat -work work +incdir+C:/Project1 {C:/Project1/my_test_bench.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 23:02:12 on Dec 10,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Project1" C:/Project1/my_test_bench.v 
+# -- Compiling module my_test_bench
+# 
+# Top level modules:
+# 	my_test_bench
+# End time: 23:02:12 on Dec 10,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs="+acc"  my_test_bench
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs=""+acc"" my_test_bench 
+# Start time: 23:02:12 on Dec 10,2023
+# Loading work.my_test_bench
+# Loading work.alu
+# Loading work.and_32bit
+# Loading work.and_16bit
+# Loading work.and_8bit
+# Loading work.and_4bit
+# Loading work.or_32bit
+# Loading work.or_16bit
+# Loading work.or_8bit
+# Loading work.or_4bit
+# Loading work.xor_32bit
+# Loading work.xor_16bit
+# Loading work.xor_8bit
+# Loading work.xor_4bit
+# Loading work.nor_32bit
+# Loading work.nor_16bit
+# Loading work.nor_8bit
+# Loading work.nor_4bit
+# Loading work.less_than_32bit
+# Loading work.comparator_32bit
+# Loading work.comparator_16bit
+# Loading work.comparator_8bit
+# Loading work.comparator_4bit
+# Loading work.comparator_2bit
+# Loading work.cla_32bit
+# Loading work.cla_16bit
+# Loading work.cla_8bit
+# Loading work.cla_4bit
+# Loading work.cla_2bit
+# Loading work.prop_gen_generator
+# Loading work.subtractor_32bit
+# Loading work.not_32bit
+# Loading work.not_16bit
+# Loading work.not_8bit
+# Loading work.not_4bit
+# Loading work.mod
+# Loading work.mod_cu
+# Loading work.mod_dp
+# Loading work.mux81_32bit
+# Loading work.and41_32bit
+# Loading work.or81_32bit
+# ** Warning: (vsim-3015) [PCDPC] - Port size (3) does not match connection size (1) for port 'cin'. The port definition is at: C:/Project1/alu.v(8).
+#    Time: 0 ps  Iteration: 0  Instance: /my_test_bench/alu File: C:/Project1/my_test_bench.v Line: 13
+# ** Warning: (vsim-3015) [PCDPC] - Port size (3) does not match connection size (1) for port 'CLK'. The port definition is at: C:/Project1/alu.v(9).
+#    Time: 0 ps  Iteration: 0  Instance: /my_test_bench/alu File: C:/Project1/my_test_bench.v Line: 13
+# ** Warning: (vsim-3015) [PCDPC] - Port size (3) does not match connection size (1) for port 'reset'. The port definition is at: C:/Project1/alu.v(10).
+#    Time: 0 ps  Iteration: 0  Instance: /my_test_bench/alu File: C:/Project1/my_test_bench.v Line: 13
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (32) for port 'out'. The port definition is at: C:/Project1/less_than_32bit.v(2).
+#    Time: 0 ps  Iteration: 0  Instance: /my_test_bench/alu/lt1 File: C:/Project1/alu.v Line: 39
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (3) for port 'cin'. The port definition is at: C:/Project1/cla_32bit.v(6).
+#    Time: 0 ps  Iteration: 0  Instance: /my_test_bench/alu/cla1 File: C:/Project1/alu.v Line: 45
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (32) for port 'cout'. The port definition is at: C:/Project1/cla_32bit.v(3).
+#    Time: 0 ps  Iteration: 0  Instance: /my_test_bench/alu/sub1/cla1 File: C:/Project1/subtractor_32bit.v Line: 14
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (3) for port 'CLK'. The port definition is at: C:/Project1/mod.v(6).
+#    Time: 0 ps  Iteration: 0  Instance: /my_test_bench/alu/mod1 File: C:/Project1/alu.v Line: 59
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (3) for port 'reset'. The port definition is at: C:/Project1/mod.v(7).
+#    Time: 0 ps  Iteration: 0  Instance: /my_test_bench/alu/mod1 File: C:/Project1/alu.v Line: 59
+# 
+# add wave *
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# run -all
+# AND
+# 00000000000000000000000000000101 and 00000000000000000000000000000111 = 00000000000000000000000000000101
+# 
+# OR
+# 00000000000000000000000000000101 or 00000000000000000000000000000111 = 00000000000000000000000000000111
+# 
+# XOR
+# 00000000000000000000000000000101 xor 00000000000000000000000000000111 = 00000000000000000000000000000010
+# 
+# NOR
+# 00000000000000000000000000000101 nor 00000000000000000000000000000111 = 11111111111111111111111111111000
+# 
+# LESS THAN
+# 2 < 1 = 0
+# 
+# ADD
+# 10 + 6 (cin = 0) = 16, cout= 0
+# 
+# SUB
+# 9 - 4 = 00000000000000000000000000000101
+# 
+# 2
+# Break key hit
+# Break in Module mod_dp at C:/Project1/mod_dp.v line 18
+# End time: 23:02:19 on Dec 10,2023, Elapsed time: 0:00:07
+# Errors: 0, Warnings: 8

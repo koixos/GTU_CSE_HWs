@@ -1,0 +1,26 @@
+module not_4bit (
+	output [3:0] out,
+	input [3:0] inp
+);
+
+	my_not (
+		.out(out[0]),
+		.inp(inp[0])
+	);
+	
+	my_not (
+		.out(out[1]),
+		.inp(inp[1])
+	);
+	
+	my_not (
+		.out(out[2]),
+		.inp(inp[2])
+	);
+	
+	my_not (
+		.out(out[3]),
+		.inp(inp[3])
+	);
+
+endmodule

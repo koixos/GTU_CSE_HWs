@@ -1,0 +1,873 @@
+Analysis & Synthesis report for Project1
+Sun Dec 10 23:01:57 2023
+Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |alu|mod:mod1|mod_cu:cu|curr_state
+  9. Registers Removed During Synthesis
+ 10. General Register Statistics
+ 11. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 12. Port Connectivity Checks: "mod:mod1"
+ 13. Port Connectivity Checks: "subtractor_32bit:sub1|cla_32bit:cla1"
+ 14. Port Connectivity Checks: "cla_32bit:cla1"
+ 15. Port Connectivity Checks: "less_than_32bit:lt1|comparator_32bit:comp1"
+ 16. Port Connectivity Checks: "less_than_32bit:lt1"
+ 17. Post-Synthesis Netlist Statistics for Top Partition
+ 18. Elapsed Time Per Partition
+ 19. Analysis & Synthesis Messages
+ 20. Analysis & Synthesis Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2020  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++-------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                  ;
++---------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status     ; Successful - Sun Dec 10 23:01:57 2023       ;
+; Quartus Prime Version           ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
+; Revision Name                   ; Project1                                    ;
+; Top-level Entity Name           ; alu                                         ;
+; Family                          ; Cyclone V                                   ;
+; Logic utilization (in ALMs)     ; N/A                                         ;
+; Total registers                 ; 102                                         ;
+; Total pins                      ; 109                                         ;
+; Total virtual pins              ; 0                                           ;
+; Total block memory bits         ; 0                                           ;
+; Total DSP Blocks                ; 0                                           ;
+; Total HSSI RX PCSs              ; 0                                           ;
+; Total HSSI PMA RX Deserializers ; 0                                           ;
+; Total HSSI TX PCSs              ; 0                                           ;
+; Total HSSI PMA TX Serializers   ; 0                                           ;
+; Total PLLs                      ; 0                                           ;
+; Total DLLs                      ; 0                                           ;
++---------------------------------+---------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                             ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                          ; Setting            ; Default Value      ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                          ; 5CGXFC7C7F23C8     ;                    ;
+; Top-level entity name                                                           ; alu                ; Project1           ;
+; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
+; Use smart compilation                                                           ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation                ; On                 ; On                 ;
+; Enable compact report table                                                     ; Off                ; Off                ;
+; Restructure Multiplexers                                                        ; Auto               ; Auto               ;
+; MLAB Add Timing Constraints For Mixed-Port Feed-Through Mode Setting Don't Care ; Off                ; Off                ;
+; Create Debugging Nodes for IP Cores                                             ; Off                ; Off                ;
+; Preserve fewer node names                                                       ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                                   ; Enable             ; Enable             ;
+; Verilog Version                                                                 ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                                    ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                        ; Auto               ; Auto               ;
+; Safe State Machine                                                              ; Off                ; Off                ;
+; Extract Verilog State Machines                                                  ; On                 ; On                 ;
+; Extract VHDL State Machines                                                     ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                               ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                      ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                                  ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                         ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                       ; On                 ; On                 ;
+; Parallel Synthesis                                                              ; On                 ; On                 ;
+; DSP Block Balancing                                                             ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                              ; On                 ; On                 ;
+; Power-Up Don't Care                                                             ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                                    ; Off                ; Off                ;
+; Remove Duplicate Registers                                                      ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                            ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                          ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                           ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                       ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                            ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                             ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                                  ; Off                ; Off                ;
+; Optimization Technique                                                          ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                              ; 70                 ; 70                 ;
+; Auto Carry Chains                                                               ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                            ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                           ; Off                ; Off                ;
+; Auto ROM Replacement                                                            ; On                 ; On                 ;
+; Auto RAM Replacement                                                            ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                      ; On                 ; On                 ;
+; Auto Shift Register Replacement                                                 ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                                 ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                                   ; On                 ; On                 ;
+; Strict RAM Replacement                                                          ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                               ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                           ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                                   ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                             ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                               ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                         ; On                 ; On                 ;
+; Report Parameter Settings                                                       ; On                 ; On                 ;
+; Report Source Assignments                                                       ; On                 ; On                 ;
+; Report Connectivity Checks                                                      ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                              ; Off                ; Off                ;
+; Synchronization Register Chain Length                                           ; 3                  ; 3                  ;
+; Power Optimization During Synthesis                                             ; Normal compilation ; Normal compilation ;
+; HDL message level                                                               ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                                 ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                        ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                              ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                       ; 100                ; 100                ;
+; Clock MUX Protection                                                            ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                     ; Off                ; Off                ;
+; Block Design Naming                                                             ; Auto               ; Auto               ;
+; SDC constraint protection                                                       ; Off                ; Off                ;
+; Synthesis Effort                                                                ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal                    ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                            ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                              ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                     ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                          ; On                 ; On                 ;
+; Automatic Parallel Synthesis                                                    ; On                 ; On                 ;
+; Partial Reconfiguration Bitstream ID                                            ; Off                ; Off                ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 16          ;
+; Maximum allowed            ; 16          ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 16          ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processors 2-16        ;   0.0%      ;
++----------------------------+-------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                   ;
++----------------------------------+-----------------+------------------------+----------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path     ; Library ;
++----------------------------------+-----------------+------------------------+----------------------------------+---------+
+; and_4bit.v                       ; yes             ; User Verilog HDL File  ; C:/Project1/and_4bit.v           ;         ;
+; alu.v                            ; yes             ; User Verilog HDL File  ; C:/Project1/alu.v                ;         ;
+; mux81_32bit.v                    ; yes             ; User Verilog HDL File  ; C:/Project1/mux81_32bit.v        ;         ;
+; and41_32bit.v                    ; yes             ; User Verilog HDL File  ; C:/Project1/and41_32bit.v        ;         ;
+; or81_32bit.v                     ; yes             ; User Verilog HDL File  ; C:/Project1/or81_32bit.v         ;         ;
+; and_32bit.v                      ; yes             ; User Verilog HDL File  ; C:/Project1/and_32bit.v          ;         ;
+; or_32bit.v                       ; yes             ; User Verilog HDL File  ; C:/Project1/or_32bit.v           ;         ;
+; and_8bit.v                       ; yes             ; User Verilog HDL File  ; C:/Project1/and_8bit.v           ;         ;
+; and_16bit.v                      ; yes             ; User Verilog HDL File  ; C:/Project1/and_16bit.v          ;         ;
+; or_4bit.v                        ; yes             ; User Verilog HDL File  ; C:/Project1/or_4bit.v            ;         ;
+; or_8bit.v                        ; yes             ; User Verilog HDL File  ; C:/Project1/or_8bit.v            ;         ;
+; or_16bit.v                       ; yes             ; User Verilog HDL File  ; C:/Project1/or_16bit.v           ;         ;
+; xor_4bit.v                       ; yes             ; User Verilog HDL File  ; C:/Project1/xor_4bit.v           ;         ;
+; xor_8bit.v                       ; yes             ; User Verilog HDL File  ; C:/Project1/xor_8bit.v           ;         ;
+; xor_16bit.v                      ; yes             ; User Verilog HDL File  ; C:/Project1/xor_16bit.v          ;         ;
+; xor_32bit.v                      ; yes             ; User Verilog HDL File  ; C:/Project1/xor_32bit.v          ;         ;
+; nor_4bit.v                       ; yes             ; User Verilog HDL File  ; C:/Project1/nor_4bit.v           ;         ;
+; nor_8bit.v                       ; yes             ; User Verilog HDL File  ; C:/Project1/nor_8bit.v           ;         ;
+; nor_16bit.v                      ; yes             ; User Verilog HDL File  ; C:/Project1/nor_16bit.v          ;         ;
+; nor_32bit.v                      ; yes             ; User Verilog HDL File  ; C:/Project1/nor_32bit.v          ;         ;
+; comparator_32bit.v               ; yes             ; User Verilog HDL File  ; C:/Project1/comparator_32bit.v   ;         ;
+; not_4bit.v                       ; yes             ; User Verilog HDL File  ; C:/Project1/not_4bit.v           ;         ;
+; not_8bit.v                       ; yes             ; User Verilog HDL File  ; C:/Project1/not_8bit.v           ;         ;
+; not_16bit.v                      ; yes             ; User Verilog HDL File  ; C:/Project1/not_16bit.v          ;         ;
+; not_32bit.v                      ; yes             ; User Verilog HDL File  ; C:/Project1/not_32bit.v          ;         ;
+; comparator_4bit.v                ; yes             ; User Verilog HDL File  ; C:/Project1/comparator_4bit.v    ;         ;
+; comparator_2bit.v                ; yes             ; User Verilog HDL File  ; C:/Project1/comparator_2bit.v    ;         ;
+; comparator_8bit.v                ; yes             ; User Verilog HDL File  ; C:/Project1/comparator_8bit.v    ;         ;
+; comparator_16bit.v               ; yes             ; User Verilog HDL File  ; C:/Project1/comparator_16bit.v   ;         ;
+; less_than_32bit.v                ; yes             ; User Verilog HDL File  ; C:/Project1/less_than_32bit.v    ;         ;
+; cla_4bit.v                       ; yes             ; User Verilog HDL File  ; C:/Project1/cla_4bit.v           ;         ;
+; cla_2bit.v                       ; yes             ; User Verilog HDL File  ; C:/Project1/cla_2bit.v           ;         ;
+; prop_gen_generator.v             ; yes             ; User Verilog HDL File  ; C:/Project1/prop_gen_generator.v ;         ;
+; cla_8bit.v                       ; yes             ; User Verilog HDL File  ; C:/Project1/cla_8bit.v           ;         ;
+; cla_16bit.v                      ; yes             ; User Verilog HDL File  ; C:/Project1/cla_16bit.v          ;         ;
+; cla_32bit.v                      ; yes             ; User Verilog HDL File  ; C:/Project1/cla_32bit.v          ;         ;
+; subtractor_32bit.v               ; yes             ; User Verilog HDL File  ; C:/Project1/subtractor_32bit.v   ;         ;
+; mod.v                            ; yes             ; User Verilog HDL File  ; C:/Project1/mod.v                ;         ;
+; mod_cu.v                         ; yes             ; User Verilog HDL File  ; C:/Project1/mod_cu.v             ;         ;
+; mod_dp.v                         ; yes             ; User Verilog HDL File  ; C:/Project1/mod_dp.v             ;         ;
++----------------------------------+-----------------+------------------------+----------------------------------+---------+
+
+
++------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                ;
++---------------------------------------------+--------------+
+; Resource                                    ; Usage        ;
++---------------------------------------------+--------------+
+; Estimate of Logic utilization (ALMs needed) ; 222          ;
+;                                             ;              ;
+; Combinational ALUT usage for logic          ; 352          ;
+;     -- 7 input functions                    ; 0            ;
+;     -- 6 input functions                    ; 59           ;
+;     -- 5 input functions                    ; 93           ;
+;     -- 4 input functions                    ; 68           ;
+;     -- <=3 input functions                  ; 132          ;
+;                                             ;              ;
+; Dedicated logic registers                   ; 102          ;
+;                                             ;              ;
+; I/O pins                                    ; 109          ;
+;                                             ;              ;
+; Total DSP Blocks                            ; 0            ;
+;                                             ;              ;
+; Maximum fan-out node                        ; CLK[0]~input ;
+; Maximum fan-out                             ; 102          ;
+; Total fan-out                               ; 1949         ;
+; Average fan-out                             ; 2.90         ;
++---------------------------------------------+--------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                             ;
++-------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------------------------------------------------------------------------------------------------------+------------------+--------------+
+; Compilation Hierarchy Node                ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                      ; Entity Name      ; Library Name ;
++-------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------------------------------------------------------------------------------------------------------+------------------+--------------+
+; |alu                                      ; 352 (0)             ; 102 (0)                   ; 0                 ; 0          ; 109  ; 0            ; |alu                                                                                                                                     ; alu              ; work         ;
+;    |cla_32bit:cla1|                       ; 39 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|cla_32bit:cla1                                                                                                                      ; cla_32bit        ; work         ;
+;       |cla_16bit:cla1|                    ; 20 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|cla_32bit:cla1|cla_16bit:cla1                                                                                                       ; cla_16bit        ; work         ;
+;          |cla_8bit:cla1|                  ; 8 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|cla_32bit:cla1|cla_16bit:cla1|cla_8bit:cla1                                                                                         ; cla_8bit         ; work         ;
+;             |cla_4bit:cla1|               ; 4 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|cla_32bit:cla1|cla_16bit:cla1|cla_8bit:cla1|cla_4bit:cla1                                                                           ; cla_4bit         ; work         ;
+;                |cla_2bit:cla1|            ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|cla_32bit:cla1|cla_16bit:cla1|cla_8bit:cla1|cla_4bit:cla1|cla_2bit:cla1                                                             ; cla_2bit         ; work         ;
+;                |cla_2bit:cla2|            ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|cla_32bit:cla1|cla_16bit:cla1|cla_8bit:cla1|cla_4bit:cla1|cla_2bit:cla2                                                             ; cla_2bit         ; work         ;
+;             |cla_4bit:cla2|               ; 4 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|cla_32bit:cla1|cla_16bit:cla1|cla_8bit:cla1|cla_4bit:cla2                                                                           ; cla_4bit         ; work         ;
+;                |cla_2bit:cla1|            ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|cla_32bit:cla1|cla_16bit:cla1|cla_8bit:cla1|cla_4bit:cla2|cla_2bit:cla1                                                             ; cla_2bit         ; work         ;
+;                |cla_2bit:cla2|            ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|cla_32bit:cla1|cla_16bit:cla1|cla_8bit:cla1|cla_4bit:cla2|cla_2bit:cla2                                                             ; cla_2bit         ; work         ;
+;          |cla_8bit:cla2|                  ; 12 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|cla_32bit:cla1|cla_16bit:cla1|cla_8bit:cla2                                                                                         ; cla_8bit         ; work         ;
+;             |cla_4bit:cla1|               ; 6 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|cla_32bit:cla1|cla_16bit:cla1|cla_8bit:cla2|cla_4bit:cla1                                                                           ; cla_4bit         ; work         ;
+;                |cla_2bit:cla1|            ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|cla_32bit:cla1|cla_16bit:cla1|cla_8bit:cla2|cla_4bit:cla1|cla_2bit:cla1                                                             ; cla_2bit         ; work         ;
+;                |cla_2bit:cla2|            ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|cla_32bit:cla1|cla_16bit:cla1|cla_8bit:cla2|cla_4bit:cla1|cla_2bit:cla2                                                             ; cla_2bit         ; work         ;
+;             |cla_4bit:cla2|               ; 6 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|cla_32bit:cla1|cla_16bit:cla1|cla_8bit:cla2|cla_4bit:cla2                                                                           ; cla_4bit         ; work         ;
+;                |cla_2bit:cla1|            ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|cla_32bit:cla1|cla_16bit:cla1|cla_8bit:cla2|cla_4bit:cla2|cla_2bit:cla1                                                             ; cla_2bit         ; work         ;
+;                |cla_2bit:cla2|            ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|cla_32bit:cla1|cla_16bit:cla1|cla_8bit:cla2|cla_4bit:cla2|cla_2bit:cla2                                                             ; cla_2bit         ; work         ;
+;       |cla_16bit:cla2|                    ; 19 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|cla_32bit:cla1|cla_16bit:cla2                                                                                                       ; cla_16bit        ; work         ;
+;          |cla_8bit:cla1|                  ; 8 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|cla_32bit:cla1|cla_16bit:cla2|cla_8bit:cla1                                                                                         ; cla_8bit         ; work         ;
+;             |cla_4bit:cla1|               ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|cla_32bit:cla1|cla_16bit:cla2|cla_8bit:cla1|cla_4bit:cla1                                                                           ; cla_4bit         ; work         ;
+;                |cla_2bit:cla1|            ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|cla_32bit:cla1|cla_16bit:cla2|cla_8bit:cla1|cla_4bit:cla1|cla_2bit:cla1                                                             ; cla_2bit         ; work         ;
+;                |cla_2bit:cla2|            ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|cla_32bit:cla1|cla_16bit:cla2|cla_8bit:cla1|cla_4bit:cla1|cla_2bit:cla2                                                             ; cla_2bit         ; work         ;
+;             |cla_4bit:cla2|               ; 5 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|cla_32bit:cla1|cla_16bit:cla2|cla_8bit:cla1|cla_4bit:cla2                                                                           ; cla_4bit         ; work         ;
+;                |cla_2bit:cla1|            ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|cla_32bit:cla1|cla_16bit:cla2|cla_8bit:cla1|cla_4bit:cla2|cla_2bit:cla1                                                             ; cla_2bit         ; work         ;
+;                |cla_2bit:cla2|            ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|cla_32bit:cla1|cla_16bit:cla2|cla_8bit:cla1|cla_4bit:cla2|cla_2bit:cla2                                                             ; cla_2bit         ; work         ;
+;          |cla_8bit:cla2|                  ; 11 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|cla_32bit:cla1|cla_16bit:cla2|cla_8bit:cla2                                                                                         ; cla_8bit         ; work         ;
+;             |cla_4bit:cla1|               ; 5 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|cla_32bit:cla1|cla_16bit:cla2|cla_8bit:cla2|cla_4bit:cla1                                                                           ; cla_4bit         ; work         ;
+;                |cla_2bit:cla1|            ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|cla_32bit:cla1|cla_16bit:cla2|cla_8bit:cla2|cla_4bit:cla1|cla_2bit:cla1                                                             ; cla_2bit         ; work         ;
+;                |cla_2bit:cla2|            ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|cla_32bit:cla1|cla_16bit:cla2|cla_8bit:cla2|cla_4bit:cla1|cla_2bit:cla2                                                             ; cla_2bit         ; work         ;
+;             |cla_4bit:cla2|               ; 6 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|cla_32bit:cla1|cla_16bit:cla2|cla_8bit:cla2|cla_4bit:cla2                                                                           ; cla_4bit         ; work         ;
+;                |cla_2bit:cla1|            ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|cla_32bit:cla1|cla_16bit:cla2|cla_8bit:cla2|cla_4bit:cla2|cla_2bit:cla1                                                             ; cla_2bit         ; work         ;
+;                |cla_2bit:cla2|            ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|cla_32bit:cla1|cla_16bit:cla2|cla_8bit:cla2|cla_4bit:cla2|cla_2bit:cla2                                                             ; cla_2bit         ; work         ;
+;    |less_than_32bit:lt1|                  ; 53 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|less_than_32bit:lt1                                                                                                                 ; less_than_32bit  ; work         ;
+;       |comparator_32bit:comp1|            ; 53 (9)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|less_than_32bit:lt1|comparator_32bit:comp1                                                                                          ; comparator_32bit ; work         ;
+;          |comparator_16bit:comp1|         ; 23 (9)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|less_than_32bit:lt1|comparator_32bit:comp1|comparator_16bit:comp1                                                                   ; comparator_16bit ; work         ;
+;             |comparator_8bit:comp1|       ; 6 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|less_than_32bit:lt1|comparator_32bit:comp1|comparator_16bit:comp1|comparator_8bit:comp1                                             ; comparator_8bit  ; work         ;
+;                |comparator_4bit:comp1|    ; 2 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|less_than_32bit:lt1|comparator_32bit:comp1|comparator_16bit:comp1|comparator_8bit:comp1|comparator_4bit:comp1                       ; comparator_4bit  ; work         ;
+;                   |comparator_2bit:comp2| ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|less_than_32bit:lt1|comparator_32bit:comp1|comparator_16bit:comp1|comparator_8bit:comp1|comparator_4bit:comp1|comparator_2bit:comp2 ; comparator_2bit  ; work         ;
+;                |comparator_4bit:comp2|    ; 4 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|less_than_32bit:lt1|comparator_32bit:comp1|comparator_16bit:comp1|comparator_8bit:comp1|comparator_4bit:comp2                       ; comparator_4bit  ; work         ;
+;                   |comparator_2bit:comp1| ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|less_than_32bit:lt1|comparator_32bit:comp1|comparator_16bit:comp1|comparator_8bit:comp1|comparator_4bit:comp2|comparator_2bit:comp1 ; comparator_2bit  ; work         ;
+;                   |comparator_2bit:comp2| ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|less_than_32bit:lt1|comparator_32bit:comp1|comparator_16bit:comp1|comparator_8bit:comp1|comparator_4bit:comp2|comparator_2bit:comp2 ; comparator_2bit  ; work         ;
+;             |comparator_8bit:comp2|       ; 8 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|less_than_32bit:lt1|comparator_32bit:comp1|comparator_16bit:comp1|comparator_8bit:comp2                                             ; comparator_8bit  ; work         ;
+;                |comparator_4bit:comp1|    ; 4 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|less_than_32bit:lt1|comparator_32bit:comp1|comparator_16bit:comp1|comparator_8bit:comp2|comparator_4bit:comp1                       ; comparator_4bit  ; work         ;
+;                   |comparator_2bit:comp1| ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|less_than_32bit:lt1|comparator_32bit:comp1|comparator_16bit:comp1|comparator_8bit:comp2|comparator_4bit:comp1|comparator_2bit:comp1 ; comparator_2bit  ; work         ;
+;                   |comparator_2bit:comp2| ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|less_than_32bit:lt1|comparator_32bit:comp1|comparator_16bit:comp1|comparator_8bit:comp2|comparator_4bit:comp1|comparator_2bit:comp2 ; comparator_2bit  ; work         ;
+;                |comparator_4bit:comp2|    ; 4 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|less_than_32bit:lt1|comparator_32bit:comp1|comparator_16bit:comp1|comparator_8bit:comp2|comparator_4bit:comp2                       ; comparator_4bit  ; work         ;
+;                   |comparator_2bit:comp1| ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|less_than_32bit:lt1|comparator_32bit:comp1|comparator_16bit:comp1|comparator_8bit:comp2|comparator_4bit:comp2|comparator_2bit:comp1 ; comparator_2bit  ; work         ;
+;                   |comparator_2bit:comp2| ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|less_than_32bit:lt1|comparator_32bit:comp1|comparator_16bit:comp1|comparator_8bit:comp2|comparator_4bit:comp2|comparator_2bit:comp2 ; comparator_2bit  ; work         ;
+;          |comparator_16bit:comp2|         ; 21 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|less_than_32bit:lt1|comparator_32bit:comp1|comparator_16bit:comp2                                                                   ; comparator_16bit ; work         ;
+;             |comparator_8bit:comp1|       ; 9 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|less_than_32bit:lt1|comparator_32bit:comp1|comparator_16bit:comp2|comparator_8bit:comp1                                             ; comparator_8bit  ; work         ;
+;                |comparator_4bit:comp1|    ; 5 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|less_than_32bit:lt1|comparator_32bit:comp1|comparator_16bit:comp2|comparator_8bit:comp1|comparator_4bit:comp1                       ; comparator_4bit  ; work         ;
+;                   |comparator_2bit:comp1| ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|less_than_32bit:lt1|comparator_32bit:comp1|comparator_16bit:comp2|comparator_8bit:comp1|comparator_4bit:comp1|comparator_2bit:comp1 ; comparator_2bit  ; work         ;
+;                   |comparator_2bit:comp2| ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|less_than_32bit:lt1|comparator_32bit:comp1|comparator_16bit:comp2|comparator_8bit:comp1|comparator_4bit:comp1|comparator_2bit:comp2 ; comparator_2bit  ; work         ;
+;                |comparator_4bit:comp2|    ; 4 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|less_than_32bit:lt1|comparator_32bit:comp1|comparator_16bit:comp2|comparator_8bit:comp1|comparator_4bit:comp2                       ; comparator_4bit  ; work         ;
+;                   |comparator_2bit:comp1| ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|less_than_32bit:lt1|comparator_32bit:comp1|comparator_16bit:comp2|comparator_8bit:comp1|comparator_4bit:comp2|comparator_2bit:comp1 ; comparator_2bit  ; work         ;
+;                   |comparator_2bit:comp2| ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|less_than_32bit:lt1|comparator_32bit:comp1|comparator_16bit:comp2|comparator_8bit:comp1|comparator_4bit:comp2|comparator_2bit:comp2 ; comparator_2bit  ; work         ;
+;             |comparator_8bit:comp2|       ; 12 (2)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|less_than_32bit:lt1|comparator_32bit:comp1|comparator_16bit:comp2|comparator_8bit:comp2                                             ; comparator_8bit  ; work         ;
+;                |comparator_4bit:comp1|    ; 6 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|less_than_32bit:lt1|comparator_32bit:comp1|comparator_16bit:comp2|comparator_8bit:comp2|comparator_4bit:comp1                       ; comparator_4bit  ; work         ;
+;                   |comparator_2bit:comp1| ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|less_than_32bit:lt1|comparator_32bit:comp1|comparator_16bit:comp2|comparator_8bit:comp2|comparator_4bit:comp1|comparator_2bit:comp1 ; comparator_2bit  ; work         ;
+;                   |comparator_2bit:comp2| ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|less_than_32bit:lt1|comparator_32bit:comp1|comparator_16bit:comp2|comparator_8bit:comp2|comparator_4bit:comp1|comparator_2bit:comp2 ; comparator_2bit  ; work         ;
+;                |comparator_4bit:comp2|    ; 4 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|less_than_32bit:lt1|comparator_32bit:comp1|comparator_16bit:comp2|comparator_8bit:comp2|comparator_4bit:comp2                       ; comparator_4bit  ; work         ;
+;                   |comparator_2bit:comp1| ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|less_than_32bit:lt1|comparator_32bit:comp1|comparator_16bit:comp2|comparator_8bit:comp2|comparator_4bit:comp2|comparator_2bit:comp1 ; comparator_2bit  ; work         ;
+;                   |comparator_2bit:comp2| ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|less_than_32bit:lt1|comparator_32bit:comp1|comparator_16bit:comp2|comparator_8bit:comp2|comparator_4bit:comp2|comparator_2bit:comp2 ; comparator_2bit  ; work         ;
+;    |mod:mod1|                             ; 103 (0)             ; 102 (0)                   ; 0                 ; 0          ; 0    ; 0            ; |alu|mod:mod1                                                                                                                            ; mod              ; work         ;
+;       |mod_cu:cu|                         ; 5 (5)               ; 5 (5)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|mod:mod1|mod_cu:cu                                                                                                                  ; mod_cu           ; work         ;
+;       |mod_dp:dp|                         ; 98 (98)             ; 97 (97)                   ; 0                 ; 0          ; 0    ; 0            ; |alu|mod:mod1|mod_dp:dp                                                                                                                  ; mod_dp           ; work         ;
+;    |mux81_32bit:mux1|                     ; 124 (0)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|mux81_32bit:mux1                                                                                                                    ; mux81_32bit      ; work         ;
+;       |and41_32bit:and1|                  ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|mux81_32bit:mux1|and41_32bit:and1                                                                                                   ; and41_32bit      ; work         ;
+;       |and41_32bit:and6|                  ; 22 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|mux81_32bit:mux1|and41_32bit:and6                                                                                                   ; and41_32bit      ; work         ;
+;          |and_32bit:and1|                 ; 22 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|mux81_32bit:mux1|and41_32bit:and6|and_32bit:and1                                                                                    ; and_32bit        ; work         ;
+;             |and_16bit:and1|              ; 12 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|mux81_32bit:mux1|and41_32bit:and6|and_32bit:and1|and_16bit:and1                                                                     ; and_16bit        ; work         ;
+;                |and_8bit:and1|            ; 6 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|mux81_32bit:mux1|and41_32bit:and6|and_32bit:and1|and_16bit:and1|and_8bit:and1                                                       ; and_8bit         ; work         ;
+;                   |and_4bit:and1|         ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|mux81_32bit:mux1|and41_32bit:and6|and_32bit:and1|and_16bit:and1|and_8bit:and1|and_4bit:and1                                         ; and_4bit         ; work         ;
+;                   |and_4bit:and2|         ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|mux81_32bit:mux1|and41_32bit:and6|and_32bit:and1|and_16bit:and1|and_8bit:and1|and_4bit:and2                                         ; and_4bit         ; work         ;
+;                |and_8bit:and2|            ; 6 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|mux81_32bit:mux1|and41_32bit:and6|and_32bit:and1|and_16bit:and1|and_8bit:and2                                                       ; and_8bit         ; work         ;
+;                   |and_4bit:and1|         ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|mux81_32bit:mux1|and41_32bit:and6|and_32bit:and1|and_16bit:and1|and_8bit:and2|and_4bit:and1                                         ; and_4bit         ; work         ;
+;                   |and_4bit:and2|         ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|mux81_32bit:mux1|and41_32bit:and6|and_32bit:and1|and_16bit:and1|and_8bit:and2|and_4bit:and2                                         ; and_4bit         ; work         ;
+;             |and_16bit:and2|              ; 10 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|mux81_32bit:mux1|and41_32bit:and6|and_32bit:and1|and_16bit:and2                                                                     ; and_16bit        ; work         ;
+;                |and_8bit:and1|            ; 7 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|mux81_32bit:mux1|and41_32bit:and6|and_32bit:and1|and_16bit:and2|and_8bit:and1                                                       ; and_8bit         ; work         ;
+;                   |and_4bit:and1|         ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|mux81_32bit:mux1|and41_32bit:and6|and_32bit:and1|and_16bit:and2|and_8bit:and1|and_4bit:and1                                         ; and_4bit         ; work         ;
+;                   |and_4bit:and2|         ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|mux81_32bit:mux1|and41_32bit:and6|and_32bit:and1|and_16bit:and2|and_8bit:and1|and_4bit:and2                                         ; and_4bit         ; work         ;
+;                |and_8bit:and2|            ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|mux81_32bit:mux1|and41_32bit:and6|and_32bit:and1|and_16bit:and2|and_8bit:and2                                                       ; and_8bit         ; work         ;
+;                   |and_4bit:and1|         ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|mux81_32bit:mux1|and41_32bit:and6|and_32bit:and1|and_16bit:and2|and_8bit:and2|and_4bit:and1                                         ; and_4bit         ; work         ;
+;                   |and_4bit:and2|         ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|mux81_32bit:mux1|and41_32bit:and6|and_32bit:and1|and_16bit:and2|and_8bit:and2|and_4bit:and2                                         ; and_4bit         ; work         ;
+;       |and41_32bit:and7|                  ; 29 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|mux81_32bit:mux1|and41_32bit:and7                                                                                                   ; and41_32bit      ; work         ;
+;          |and_32bit:and1|                 ; 29 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|mux81_32bit:mux1|and41_32bit:and7|and_32bit:and1                                                                                    ; and_32bit        ; work         ;
+;             |and_16bit:and1|              ; 15 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|mux81_32bit:mux1|and41_32bit:and7|and_32bit:and1|and_16bit:and1                                                                     ; and_16bit        ; work         ;
+;                |and_8bit:and1|            ; 7 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|mux81_32bit:mux1|and41_32bit:and7|and_32bit:and1|and_16bit:and1|and_8bit:and1                                                       ; and_8bit         ; work         ;
+;                   |and_4bit:and1|         ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|mux81_32bit:mux1|and41_32bit:and7|and_32bit:and1|and_16bit:and1|and_8bit:and1|and_4bit:and1                                         ; and_4bit         ; work         ;
+;                   |and_4bit:and2|         ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|mux81_32bit:mux1|and41_32bit:and7|and_32bit:and1|and_16bit:and1|and_8bit:and1|and_4bit:and2                                         ; and_4bit         ; work         ;
+;                |and_8bit:and2|            ; 8 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|mux81_32bit:mux1|and41_32bit:and7|and_32bit:and1|and_16bit:and1|and_8bit:and2                                                       ; and_8bit         ; work         ;
+;                   |and_4bit:and1|         ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|mux81_32bit:mux1|and41_32bit:and7|and_32bit:and1|and_16bit:and1|and_8bit:and2|and_4bit:and1                                         ; and_4bit         ; work         ;
+;                   |and_4bit:and2|         ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|mux81_32bit:mux1|and41_32bit:and7|and_32bit:and1|and_16bit:and1|and_8bit:and2|and_4bit:and2                                         ; and_4bit         ; work         ;
+;             |and_16bit:and2|              ; 14 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|mux81_32bit:mux1|and41_32bit:and7|and_32bit:and1|and_16bit:and2                                                                     ; and_16bit        ; work         ;
+;                |and_8bit:and1|            ; 7 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|mux81_32bit:mux1|and41_32bit:and7|and_32bit:and1|and_16bit:and2|and_8bit:and1                                                       ; and_8bit         ; work         ;
+;                   |and_4bit:and1|         ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|mux81_32bit:mux1|and41_32bit:and7|and_32bit:and1|and_16bit:and2|and_8bit:and1|and_4bit:and1                                         ; and_4bit         ; work         ;
+;                   |and_4bit:and2|         ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|mux81_32bit:mux1|and41_32bit:and7|and_32bit:and1|and_16bit:and2|and_8bit:and1|and_4bit:and2                                         ; and_4bit         ; work         ;
+;                |and_8bit:and2|            ; 7 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|mux81_32bit:mux1|and41_32bit:and7|and_32bit:and1|and_16bit:and2|and_8bit:and2                                                       ; and_8bit         ; work         ;
+;                   |and_4bit:and1|         ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|mux81_32bit:mux1|and41_32bit:and7|and_32bit:and1|and_16bit:and2|and_8bit:and2|and_4bit:and1                                         ; and_4bit         ; work         ;
+;                   |and_4bit:and2|         ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|mux81_32bit:mux1|and41_32bit:and7|and_32bit:and1|and_16bit:and2|and_8bit:and2|and_4bit:and2                                         ; and_4bit         ; work         ;
+;       |or81_32bit:or1|                    ; 70 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|mux81_32bit:mux1|or81_32bit:or1                                                                                                     ; or81_32bit       ; work         ;
+;          |or_32bit:or7|                   ; 70 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|mux81_32bit:mux1|or81_32bit:or1|or_32bit:or7                                                                                        ; or_32bit         ; work         ;
+;             |or_16bit:or1|                ; 34 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|mux81_32bit:mux1|or81_32bit:or1|or_32bit:or7|or_16bit:or1                                                                           ; or_16bit         ; work         ;
+;                |or_8bit:or1|              ; 18 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|mux81_32bit:mux1|or81_32bit:or1|or_32bit:or7|or_16bit:or1|or_8bit:or1                                                               ; or_8bit          ; work         ;
+;                   |or_4bit:or1|           ; 10 (10)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|mux81_32bit:mux1|or81_32bit:or1|or_32bit:or7|or_16bit:or1|or_8bit:or1|or_4bit:or1                                                   ; or_4bit          ; work         ;
+;                   |or_4bit:or2|           ; 8 (8)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|mux81_32bit:mux1|or81_32bit:or1|or_32bit:or7|or_16bit:or1|or_8bit:or1|or_4bit:or2                                                   ; or_4bit          ; work         ;
+;                |or_8bit:or2|              ; 16 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|mux81_32bit:mux1|or81_32bit:or1|or_32bit:or7|or_16bit:or1|or_8bit:or2                                                               ; or_8bit          ; work         ;
+;                   |or_4bit:or1|           ; 8 (8)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|mux81_32bit:mux1|or81_32bit:or1|or_32bit:or7|or_16bit:or1|or_8bit:or2|or_4bit:or1                                                   ; or_4bit          ; work         ;
+;                   |or_4bit:or2|           ; 8 (8)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|mux81_32bit:mux1|or81_32bit:or1|or_32bit:or7|or_16bit:or1|or_8bit:or2|or_4bit:or2                                                   ; or_4bit          ; work         ;
+;             |or_16bit:or2|                ; 36 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|mux81_32bit:mux1|or81_32bit:or1|or_32bit:or7|or_16bit:or2                                                                           ; or_16bit         ; work         ;
+;                |or_8bit:or1|              ; 16 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|mux81_32bit:mux1|or81_32bit:or1|or_32bit:or7|or_16bit:or2|or_8bit:or1                                                               ; or_8bit          ; work         ;
+;                   |or_4bit:or1|           ; 8 (8)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|mux81_32bit:mux1|or81_32bit:or1|or_32bit:or7|or_16bit:or2|or_8bit:or1|or_4bit:or1                                                   ; or_4bit          ; work         ;
+;                   |or_4bit:or2|           ; 8 (8)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|mux81_32bit:mux1|or81_32bit:or1|or_32bit:or7|or_16bit:or2|or_8bit:or1|or_4bit:or2                                                   ; or_4bit          ; work         ;
+;                |or_8bit:or2|              ; 20 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|mux81_32bit:mux1|or81_32bit:or1|or_32bit:or7|or_16bit:or2|or_8bit:or2                                                               ; or_8bit          ; work         ;
+;                   |or_4bit:or1|           ; 8 (8)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|mux81_32bit:mux1|or81_32bit:or1|or_32bit:or7|or_16bit:or2|or_8bit:or2|or_4bit:or1                                                   ; or_4bit          ; work         ;
+;                   |or_4bit:or2|           ; 12 (12)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|mux81_32bit:mux1|or81_32bit:or1|or_32bit:or7|or_16bit:or2|or_8bit:or2|or_4bit:or2                                                   ; or_4bit          ; work         ;
+;    |subtractor_32bit:sub1|                ; 33 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|subtractor_32bit:sub1                                                                                                               ; subtractor_32bit ; work         ;
+;       |cla_32bit:cla1|                    ; 33 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|subtractor_32bit:sub1|cla_32bit:cla1                                                                                                ; cla_32bit        ; work         ;
+;          |cla_16bit:cla1|                 ; 17 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|subtractor_32bit:sub1|cla_32bit:cla1|cla_16bit:cla1                                                                                 ; cla_16bit        ; work         ;
+;             |cla_8bit:cla1|               ; 8 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|subtractor_32bit:sub1|cla_32bit:cla1|cla_16bit:cla1|cla_8bit:cla1                                                                   ; cla_8bit         ; work         ;
+;                |cla_4bit:cla1|            ; 4 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|subtractor_32bit:sub1|cla_32bit:cla1|cla_16bit:cla1|cla_8bit:cla1|cla_4bit:cla1                                                     ; cla_4bit         ; work         ;
+;                   |cla_2bit:cla1|         ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|subtractor_32bit:sub1|cla_32bit:cla1|cla_16bit:cla1|cla_8bit:cla1|cla_4bit:cla1|cla_2bit:cla1                                       ; cla_2bit         ; work         ;
+;                   |cla_2bit:cla2|         ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|subtractor_32bit:sub1|cla_32bit:cla1|cla_16bit:cla1|cla_8bit:cla1|cla_4bit:cla1|cla_2bit:cla2                                       ; cla_2bit         ; work         ;
+;                |cla_4bit:cla2|            ; 4 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|subtractor_32bit:sub1|cla_32bit:cla1|cla_16bit:cla1|cla_8bit:cla1|cla_4bit:cla2                                                     ; cla_4bit         ; work         ;
+;                   |cla_2bit:cla1|         ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|subtractor_32bit:sub1|cla_32bit:cla1|cla_16bit:cla1|cla_8bit:cla1|cla_4bit:cla2|cla_2bit:cla1                                       ; cla_2bit         ; work         ;
+;                   |cla_2bit:cla2|         ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|subtractor_32bit:sub1|cla_32bit:cla1|cla_16bit:cla1|cla_8bit:cla1|cla_4bit:cla2|cla_2bit:cla2                                       ; cla_2bit         ; work         ;
+;             |cla_8bit:cla2|               ; 9 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|subtractor_32bit:sub1|cla_32bit:cla1|cla_16bit:cla1|cla_8bit:cla2                                                                   ; cla_8bit         ; work         ;
+;                |cla_4bit:cla1|            ; 4 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|subtractor_32bit:sub1|cla_32bit:cla1|cla_16bit:cla1|cla_8bit:cla2|cla_4bit:cla1                                                     ; cla_4bit         ; work         ;
+;                   |cla_2bit:cla1|         ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|subtractor_32bit:sub1|cla_32bit:cla1|cla_16bit:cla1|cla_8bit:cla2|cla_4bit:cla1|cla_2bit:cla1                                       ; cla_2bit         ; work         ;
+;                   |cla_2bit:cla2|         ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|subtractor_32bit:sub1|cla_32bit:cla1|cla_16bit:cla1|cla_8bit:cla2|cla_4bit:cla1|cla_2bit:cla2                                       ; cla_2bit         ; work         ;
+;                |cla_4bit:cla2|            ; 5 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|subtractor_32bit:sub1|cla_32bit:cla1|cla_16bit:cla1|cla_8bit:cla2|cla_4bit:cla2                                                     ; cla_4bit         ; work         ;
+;                   |cla_2bit:cla1|         ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|subtractor_32bit:sub1|cla_32bit:cla1|cla_16bit:cla1|cla_8bit:cla2|cla_4bit:cla2|cla_2bit:cla1                                       ; cla_2bit         ; work         ;
+;                   |cla_2bit:cla2|         ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|subtractor_32bit:sub1|cla_32bit:cla1|cla_16bit:cla1|cla_8bit:cla2|cla_4bit:cla2|cla_2bit:cla2                                       ; cla_2bit         ; work         ;
+;          |cla_16bit:cla2|                 ; 16 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|subtractor_32bit:sub1|cla_32bit:cla1|cla_16bit:cla2                                                                                 ; cla_16bit        ; work         ;
+;             |cla_8bit:cla1|               ; 10 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|subtractor_32bit:sub1|cla_32bit:cla1|cla_16bit:cla2|cla_8bit:cla1                                                                   ; cla_8bit         ; work         ;
+;                |cla_4bit:cla1|            ; 5 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|subtractor_32bit:sub1|cla_32bit:cla1|cla_16bit:cla2|cla_8bit:cla1|cla_4bit:cla1                                                     ; cla_4bit         ; work         ;
+;                   |cla_2bit:cla1|         ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|subtractor_32bit:sub1|cla_32bit:cla1|cla_16bit:cla2|cla_8bit:cla1|cla_4bit:cla1|cla_2bit:cla1                                       ; cla_2bit         ; work         ;
+;                   |cla_2bit:cla2|         ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|subtractor_32bit:sub1|cla_32bit:cla1|cla_16bit:cla2|cla_8bit:cla1|cla_4bit:cla1|cla_2bit:cla2                                       ; cla_2bit         ; work         ;
+;                |cla_4bit:cla2|            ; 5 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|subtractor_32bit:sub1|cla_32bit:cla1|cla_16bit:cla2|cla_8bit:cla1|cla_4bit:cla2                                                     ; cla_4bit         ; work         ;
+;                   |cla_2bit:cla1|         ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|subtractor_32bit:sub1|cla_32bit:cla1|cla_16bit:cla2|cla_8bit:cla1|cla_4bit:cla2|cla_2bit:cla1                                       ; cla_2bit         ; work         ;
+;                   |cla_2bit:cla2|         ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|subtractor_32bit:sub1|cla_32bit:cla1|cla_16bit:cla2|cla_8bit:cla1|cla_4bit:cla2|cla_2bit:cla2                                       ; cla_2bit         ; work         ;
+;             |cla_8bit:cla2|               ; 6 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|subtractor_32bit:sub1|cla_32bit:cla1|cla_16bit:cla2|cla_8bit:cla2                                                                   ; cla_8bit         ; work         ;
+;                |cla_4bit:cla1|            ; 4 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|subtractor_32bit:sub1|cla_32bit:cla1|cla_16bit:cla2|cla_8bit:cla2|cla_4bit:cla1                                                     ; cla_4bit         ; work         ;
+;                   |cla_2bit:cla1|         ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|subtractor_32bit:sub1|cla_32bit:cla1|cla_16bit:cla2|cla_8bit:cla2|cla_4bit:cla1|cla_2bit:cla1                                       ; cla_2bit         ; work         ;
+;                   |cla_2bit:cla2|         ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|subtractor_32bit:sub1|cla_32bit:cla1|cla_16bit:cla2|cla_8bit:cla2|cla_4bit:cla1|cla_2bit:cla2                                       ; cla_2bit         ; work         ;
+;                |cla_4bit:cla2|            ; 2 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|subtractor_32bit:sub1|cla_32bit:cla1|cla_16bit:cla2|cla_8bit:cla2|cla_4bit:cla2                                                     ; cla_4bit         ; work         ;
+;                   |cla_2bit:cla1|         ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|subtractor_32bit:sub1|cla_32bit:cla1|cla_16bit:cla2|cla_8bit:cla2|cla_4bit:cla2|cla_2bit:cla1                                       ; cla_2bit         ; work         ;
++-------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------------------------------------------------------------------------------------------------------+------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++------------------------------------------------------------------------------------------------------------+
+; State Machine - |alu|mod:mod1|mod_cu:cu|curr_state                                                         ;
++------------------+-----------------+------------------+----------------+------------------+----------------+
+; Name             ; curr_state.COMP ; curr_state.ASSGN ; curr_state.SUB ; curr_state.START ; curr_state.END ;
++------------------+-----------------+------------------+----------------+------------------+----------------+
+; curr_state.START ; 0               ; 0                ; 0              ; 0                ; 0              ;
+; curr_state.SUB   ; 0               ; 0                ; 1              ; 1                ; 0              ;
+; curr_state.ASSGN ; 0               ; 1                ; 0              ; 1                ; 0              ;
+; curr_state.COMP  ; 1               ; 0                ; 0              ; 1                ; 0              ;
+; curr_state.END   ; 0               ; 0                ; 0              ; 1                ; 1              ;
++------------------+-----------------+------------------+----------------+------------------+----------------+
+
+
++------------------------------------------------------------+
+; Registers Removed During Synthesis                         ;
++---------------------------------------+--------------------+
+; Register name                         ; Reason for Removal ;
++---------------------------------------+--------------------+
+; mod:mod1|mod_cu:cu|curr_state~2       ; Lost fanout        ;
+; mod:mod1|mod_cu:cu|curr_state~3       ; Lost fanout        ;
+; Total Number of Removed Registers = 2 ;                    ;
++---------------------------------------+--------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 102   ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 32    ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 96    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                 ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output       ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------+
+; 3:1                ; 32 bits   ; 64 LEs        ; 0 LEs                ; 64 LEs                 ; Yes        ; |alu|mod:mod1|mod_dp:dp|wres[18] ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "mod:mod1"                                                                                                                                                                        ;
++-------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port  ; Type  ; Severity ; Details                                                                                                                                                                          ;
++-------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; CLK   ; Input ; Warning  ; Input port expression (3 bits) is wider than the input port (1 bits) it drives.  The 2 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; reset ; Input ; Warning  ; Input port expression (3 bits) is wider than the input port (1 bits) it drives.  The 2 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
++-------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "subtractor_32bit:sub1|cla_32bit:cla1"                                                                                                                                       ;
++----------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                                                                                                                 ;
++----------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; cout     ; Output ; Warning  ; Output or bidir port (1 bits) is smaller than the port expression (32 bits) it drives.  The 31 most-significant bit(s) in the port expression will be connected to GND. ;
+; cout[-1] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                     ;
+; cin      ; Input  ; Info     ; Stuck at VCC                                                                                                                                                            ;
++----------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "cla_32bit:cla1"                                                                                                                                                                 ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                                                                                                          ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; cin  ; Input ; Warning  ; Input port expression (3 bits) is wider than the input port (1 bits) it drives.  The 2 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "less_than_32bit:lt1|comparator_32bit:comp1"                                            ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+; Port    ; Type   ; Severity ; Details                                                                             ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+; greater ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; equal   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "less_than_32bit:lt1"                                                                                                                                                    ;
++------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                                                                                                                 ;
++------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; out  ; Output ; Warning  ; Output or bidir port (1 bits) is smaller than the port expression (32 bits) it drives.  The 31 most-significant bit(s) in the port expression will be connected to GND. ;
++------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; arriav_ff             ; 102                         ;
+;     ENA               ; 64                          ;
+;     ENA SLD           ; 32                          ;
+;     plain             ; 6                           ;
+; arriav_lcell_comb     ; 352                         ;
+;     arith             ; 32                          ;
+;         2 data inputs ; 32                          ;
+;     normal            ; 288                         ;
+;         1 data inputs ; 1                           ;
+;         2 data inputs ; 40                          ;
+;         3 data inputs ; 27                          ;
+;         4 data inputs ; 68                          ;
+;         5 data inputs ; 93                          ;
+;         6 data inputs ; 59                          ;
+;     shared            ; 32                          ;
+;         2 data inputs ; 32                          ;
+; boundary_port         ; 109                         ;
+;                       ;                             ;
+; Max LUT depth         ; 11.00                       ;
+; Average LUT depth     ; 4.99                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:01     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
+    Info: Processing started: Sun Dec 10 23:01:45 2023
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Project1 -c Project1
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 16 of the 16 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file my_test_bench.v
+    Info (12023): Found entity 1: my_test_bench File: C:/Project1/my_test_bench.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file and_4bit.v
+    Info (12023): Found entity 1: and_4bit File: C:/Project1/and_4bit.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file alu.v
+    Info (12023): Found entity 1: alu File: C:/Project1/alu.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file mux81_32bit.v
+    Info (12023): Found entity 1: mux81_32bit File: C:/Project1/mux81_32bit.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file and41_32bit.v
+    Info (12023): Found entity 1: and41_32bit File: C:/Project1/and41_32bit.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file or81_32bit.v
+    Info (12023): Found entity 1: or81_32bit File: C:/Project1/or81_32bit.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file and_32bit.v
+    Info (12023): Found entity 1: and_32bit File: C:/Project1/and_32bit.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file or_32bit.v
+    Info (12023): Found entity 1: or_32bit File: C:/Project1/or_32bit.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file and_8bit.v
+    Info (12023): Found entity 1: and_8bit File: C:/Project1/and_8bit.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file and_16bit.v
+    Info (12023): Found entity 1: and_16bit File: C:/Project1/and_16bit.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file or_4bit.v
+    Info (12023): Found entity 1: or_4bit File: C:/Project1/or_4bit.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file or_8bit.v
+    Info (12023): Found entity 1: or_8bit File: C:/Project1/or_8bit.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file or_16bit.v
+    Info (12023): Found entity 1: or_16bit File: C:/Project1/or_16bit.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file xor_4bit.v
+    Info (12023): Found entity 1: xor_4bit File: C:/Project1/xor_4bit.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file xor_8bit.v
+    Info (12023): Found entity 1: xor_8bit File: C:/Project1/xor_8bit.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file xor_16bit.v
+    Info (12023): Found entity 1: xor_16bit File: C:/Project1/xor_16bit.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file xor_32bit.v
+    Info (12023): Found entity 1: xor_32bit File: C:/Project1/xor_32bit.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file nor_4bit.v
+    Info (12023): Found entity 1: nor_4bit File: C:/Project1/nor_4bit.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file nor_8bit.v
+    Info (12023): Found entity 1: nor_8bit File: C:/Project1/nor_8bit.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file nor_16bit.v
+    Info (12023): Found entity 1: nor_16bit File: C:/Project1/nor_16bit.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file nor_32bit.v
+    Info (12023): Found entity 1: nor_32bit File: C:/Project1/nor_32bit.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file comparator_32bit.v
+    Info (12023): Found entity 1: comparator_32bit File: C:/Project1/comparator_32bit.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file not_4bit.v
+    Info (12023): Found entity 1: not_4bit File: C:/Project1/not_4bit.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file not_8bit.v
+    Info (12023): Found entity 1: not_8bit File: C:/Project1/not_8bit.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file not_16bit.v
+    Info (12023): Found entity 1: not_16bit File: C:/Project1/not_16bit.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file not_32bit.v
+    Info (12023): Found entity 1: not_32bit File: C:/Project1/not_32bit.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file comparator_4bit.v
+    Info (12023): Found entity 1: comparator_4bit File: C:/Project1/comparator_4bit.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file comparator_2bit.v
+    Info (12023): Found entity 1: comparator_2bit File: C:/Project1/comparator_2bit.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file comparator_8bit.v
+    Info (12023): Found entity 1: comparator_8bit File: C:/Project1/comparator_8bit.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file comparator_16bit.v
+    Info (12023): Found entity 1: comparator_16bit File: C:/Project1/comparator_16bit.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file less_than_32bit.v
+    Info (12023): Found entity 1: less_than_32bit File: C:/Project1/less_than_32bit.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file cla_4bit.v
+    Info (12023): Found entity 1: cla_4bit File: C:/Project1/cla_4bit.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file cla_2bit.v
+    Info (12023): Found entity 1: cla_2bit File: C:/Project1/cla_2bit.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file prop_gen_generator.v
+    Info (12023): Found entity 1: prop_gen_generator File: C:/Project1/prop_gen_generator.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file cla_8bit.v
+    Info (12023): Found entity 1: cla_8bit File: C:/Project1/cla_8bit.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file cla_16bit.v
+    Info (12023): Found entity 1: cla_16bit File: C:/Project1/cla_16bit.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file cla_32bit.v
+    Info (12023): Found entity 1: cla_32bit File: C:/Project1/cla_32bit.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file subtractor_32bit.v
+    Info (12023): Found entity 1: subtractor_32bit File: C:/Project1/subtractor_32bit.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file mod.v
+    Info (12023): Found entity 1: mod File: C:/Project1/mod.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file mod_cu.v
+    Info (12023): Found entity 1: mod_cu File: C:/Project1/mod_cu.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file mod_dp.v
+    Info (12023): Found entity 1: mod_dp File: C:/Project1/mod_dp.v Line: 1
+Warning (10236): Verilog HDL Implicit Net warning at and41_32bit.v(10): created implicit net for "w" File: C:/Project1/and41_32bit.v Line: 10
+Warning (10236): Verilog HDL Implicit Net warning at mod.v(11): created implicit net for "Wsub" File: C:/Project1/mod.v Line: 11
+Warning (10236): Verilog HDL Implicit Net warning at mod.v(12): created implicit net for "weq" File: C:/Project1/mod.v Line: 12
+Warning (10236): Verilog HDL Implicit Net warning at mod.v(13): created implicit net for "wcomp" File: C:/Project1/mod.v Line: 13
+Warning (10236): Verilog HDL Implicit Net warning at mod.v(14): created implicit net for "wtemp" File: C:/Project1/mod.v Line: 14
+Warning (10236): Verilog HDL Implicit Net warning at mod.v(15): created implicit net for "wdone" File: C:/Project1/mod.v Line: 15
+Warning (10236): Verilog HDL Implicit Net warning at mod.v(16): created implicit net for "wlt" File: C:/Project1/mod.v Line: 16
+Info (12127): Elaborating entity "alu" for the top level hierarchy
+Info (12128): Elaborating entity "and_32bit" for hierarchy "and_32bit:and1" File: C:/Project1/alu.v Line: 19
+Info (12128): Elaborating entity "and_16bit" for hierarchy "and_32bit:and1|and_16bit:and1" File: C:/Project1/and_32bit.v Line: 10
+Info (12128): Elaborating entity "and_8bit" for hierarchy "and_32bit:and1|and_16bit:and1|and_8bit:and1" File: C:/Project1/and_16bit.v Line: 11
+Info (12128): Elaborating entity "and_4bit" for hierarchy "and_32bit:and1|and_16bit:and1|and_8bit:and1|and_4bit:and1" File: C:/Project1/and_8bit.v Line: 11
+Info (12128): Elaborating entity "or_32bit" for hierarchy "or_32bit:or1" File: C:/Project1/alu.v Line: 25
+Info (12128): Elaborating entity "or_16bit" for hierarchy "or_32bit:or1|or_16bit:or1" File: C:/Project1/or_32bit.v Line: 10
+Info (12128): Elaborating entity "or_8bit" for hierarchy "or_32bit:or1|or_16bit:or1|or_8bit:or1" File: C:/Project1/or_16bit.v Line: 11
+Info (12128): Elaborating entity "or_4bit" for hierarchy "or_32bit:or1|or_16bit:or1|or_8bit:or1|or_4bit:or1" File: C:/Project1/or_8bit.v Line: 11
+Info (12128): Elaborating entity "xor_32bit" for hierarchy "xor_32bit:xor1" File: C:/Project1/alu.v Line: 31
+Info (12128): Elaborating entity "xor_16bit" for hierarchy "xor_32bit:xor1|xor_16bit:xor1" File: C:/Project1/xor_32bit.v Line: 10
+Info (12128): Elaborating entity "xor_8bit" for hierarchy "xor_32bit:xor1|xor_16bit:xor1|xor_8bit:xor1" File: C:/Project1/xor_16bit.v Line: 11
+Info (12128): Elaborating entity "xor_4bit" for hierarchy "xor_32bit:xor1|xor_16bit:xor1|xor_8bit:xor1|xor_4bit:xor1" File: C:/Project1/xor_8bit.v Line: 11
+Info (12128): Elaborating entity "nor_32bit" for hierarchy "nor_32bit:nor1" File: C:/Project1/alu.v Line: 37
+Info (12128): Elaborating entity "nor_16bit" for hierarchy "nor_32bit:nor1|nor_16bit:nor1" File: C:/Project1/nor_32bit.v Line: 10
+Info (12128): Elaborating entity "nor_8bit" for hierarchy "nor_32bit:nor1|nor_16bit:nor1|nor_8bit:nor1" File: C:/Project1/nor_16bit.v Line: 11
+Info (12128): Elaborating entity "nor_4bit" for hierarchy "nor_32bit:nor1|nor_16bit:nor1|nor_8bit:nor1|nor_4bit:nor1" File: C:/Project1/nor_8bit.v Line: 11
+Info (12128): Elaborating entity "less_than_32bit" for hierarchy "less_than_32bit:lt1" File: C:/Project1/alu.v Line: 43
+Info (12128): Elaborating entity "comparator_32bit" for hierarchy "less_than_32bit:lt1|comparator_32bit:comp1" File: C:/Project1/less_than_32bit.v Line: 15
+Info (12128): Elaborating entity "comparator_16bit" for hierarchy "less_than_32bit:lt1|comparator_32bit:comp1|comparator_16bit:comp1" File: C:/Project1/comparator_32bit.v Line: 21
+Info (12128): Elaborating entity "comparator_8bit" for hierarchy "less_than_32bit:lt1|comparator_32bit:comp1|comparator_16bit:comp1|comparator_8bit:comp1" File: C:/Project1/comparator_16bit.v Line: 21
+Info (12128): Elaborating entity "comparator_4bit" for hierarchy "less_than_32bit:lt1|comparator_32bit:comp1|comparator_16bit:comp1|comparator_8bit:comp1|comparator_4bit:comp1" File: C:/Project1/comparator_8bit.v Line: 21
+Info (12128): Elaborating entity "comparator_2bit" for hierarchy "less_than_32bit:lt1|comparator_32bit:comp1|comparator_16bit:comp1|comparator_8bit:comp1|comparator_4bit:comp1|comparator_2bit:comp1" File: C:/Project1/comparator_4bit.v Line: 21
+Info (12128): Elaborating entity "cla_32bit" for hierarchy "cla_32bit:cla1" File: C:/Project1/alu.v Line: 51
+Info (12128): Elaborating entity "cla_16bit" for hierarchy "cla_32bit:cla1|cla_16bit:cla1" File: C:/Project1/cla_32bit.v Line: 19
+Info (12128): Elaborating entity "cla_8bit" for hierarchy "cla_32bit:cla1|cla_16bit:cla1|cla_8bit:cla1" File: C:/Project1/cla_16bit.v Line: 19
+Info (12128): Elaborating entity "cla_4bit" for hierarchy "cla_32bit:cla1|cla_16bit:cla1|cla_8bit:cla1|cla_4bit:cla1" File: C:/Project1/cla_8bit.v Line: 19
+Info (12128): Elaborating entity "cla_2bit" for hierarchy "cla_32bit:cla1|cla_16bit:cla1|cla_8bit:cla1|cla_4bit:cla1|cla_2bit:cla1" File: C:/Project1/cla_4bit.v Line: 20
+Info (12128): Elaborating entity "prop_gen_generator" for hierarchy "cla_32bit:cla1|cla_16bit:cla1|cla_8bit:cla1|cla_4bit:cla1|cla_2bit:cla1|prop_gen_generator:genr1" File: C:/Project1/cla_2bit.v Line: 19
+Info (12128): Elaborating entity "subtractor_32bit" for hierarchy "subtractor_32bit:sub1" File: C:/Project1/alu.v Line: 57
+Info (12128): Elaborating entity "not_32bit" for hierarchy "subtractor_32bit:sub1|not_32bit:not1" File: C:/Project1/subtractor_32bit.v Line: 12
+Info (12128): Elaborating entity "not_16bit" for hierarchy "subtractor_32bit:sub1|not_32bit:not1|not_16bit:not1" File: C:/Project1/not_32bit.v Line: 8
+Info (12128): Elaborating entity "not_8bit" for hierarchy "subtractor_32bit:sub1|not_32bit:not1|not_16bit:not1|not_8bit:not1" File: C:/Project1/not_16bit.v Line: 9
+Info (12128): Elaborating entity "not_4bit" for hierarchy "subtractor_32bit:sub1|not_32bit:not1|not_16bit:not1|not_8bit:not1|not_4bit:not1" File: C:/Project1/not_8bit.v Line: 9
+Info (12128): Elaborating entity "mod" for hierarchy "mod:mod1" File: C:/Project1/alu.v Line: 65
+Info (12128): Elaborating entity "mod_cu" for hierarchy "mod:mod1|mod_cu:cu" File: C:/Project1/mod.v Line: 19
+Info (12128): Elaborating entity "mod_dp" for hierarchy "mod:mod1|mod_dp:dp" File: C:/Project1/mod.v Line: 32
+Info (12128): Elaborating entity "mux81_32bit" for hierarchy "mux81_32bit:mux1" File: C:/Project1/alu.v Line: 78
+Info (12128): Elaborating entity "and41_32bit" for hierarchy "mux81_32bit:mux1|and41_32bit:and1" File: C:/Project1/mux81_32bit.v Line: 22
+Info (12128): Elaborating entity "or81_32bit" for hierarchy "mux81_32bit:mux1|or81_32bit:or1" File: C:/Project1/mux81_32bit.v Line: 90
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "res[4][31]" is missing source, defaulting to GND File: C:/Project1/alu.v Line: 13
+    Warning (12110): Net "res[4][30]" is missing source, defaulting to GND File: C:/Project1/alu.v Line: 13
+    Warning (12110): Net "res[4][29]" is missing source, defaulting to GND File: C:/Project1/alu.v Line: 13
+    Warning (12110): Net "res[4][28]" is missing source, defaulting to GND File: C:/Project1/alu.v Line: 13
+    Warning (12110): Net "res[4][27]" is missing source, defaulting to GND File: C:/Project1/alu.v Line: 13
+    Warning (12110): Net "res[4][26]" is missing source, defaulting to GND File: C:/Project1/alu.v Line: 13
+    Warning (12110): Net "res[4][25]" is missing source, defaulting to GND File: C:/Project1/alu.v Line: 13
+    Warning (12110): Net "res[4][24]" is missing source, defaulting to GND File: C:/Project1/alu.v Line: 13
+    Warning (12110): Net "res[4][23]" is missing source, defaulting to GND File: C:/Project1/alu.v Line: 13
+    Warning (12110): Net "res[4][22]" is missing source, defaulting to GND File: C:/Project1/alu.v Line: 13
+    Warning (12110): Net "res[4][21]" is missing source, defaulting to GND File: C:/Project1/alu.v Line: 13
+    Warning (12110): Net "res[4][20]" is missing source, defaulting to GND File: C:/Project1/alu.v Line: 13
+    Warning (12110): Net "res[4][19]" is missing source, defaulting to GND File: C:/Project1/alu.v Line: 13
+    Warning (12110): Net "res[4][18]" is missing source, defaulting to GND File: C:/Project1/alu.v Line: 13
+    Warning (12110): Net "res[4][17]" is missing source, defaulting to GND File: C:/Project1/alu.v Line: 13
+    Warning (12110): Net "res[4][16]" is missing source, defaulting to GND File: C:/Project1/alu.v Line: 13
+    Warning (12110): Net "res[4][15]" is missing source, defaulting to GND File: C:/Project1/alu.v Line: 13
+    Warning (12110): Net "res[4][14]" is missing source, defaulting to GND File: C:/Project1/alu.v Line: 13
+    Warning (12110): Net "res[4][13]" is missing source, defaulting to GND File: C:/Project1/alu.v Line: 13
+    Warning (12110): Net "res[4][12]" is missing source, defaulting to GND File: C:/Project1/alu.v Line: 13
+    Warning (12110): Net "res[4][11]" is missing source, defaulting to GND File: C:/Project1/alu.v Line: 13
+    Warning (12110): Net "res[4][10]" is missing source, defaulting to GND File: C:/Project1/alu.v Line: 13
+    Warning (12110): Net "res[4][9]" is missing source, defaulting to GND File: C:/Project1/alu.v Line: 13
+    Warning (12110): Net "res[4][8]" is missing source, defaulting to GND File: C:/Project1/alu.v Line: 13
+    Warning (12110): Net "res[4][7]" is missing source, defaulting to GND File: C:/Project1/alu.v Line: 13
+    Warning (12110): Net "res[4][6]" is missing source, defaulting to GND File: C:/Project1/alu.v Line: 13
+    Warning (12110): Net "res[4][5]" is missing source, defaulting to GND File: C:/Project1/alu.v Line: 13
+    Warning (12110): Net "res[4][4]" is missing source, defaulting to GND File: C:/Project1/alu.v Line: 13
+    Warning (12110): Net "res[4][3]" is missing source, defaulting to GND File: C:/Project1/alu.v Line: 13
+    Warning (12110): Net "res[4][2]" is missing source, defaulting to GND File: C:/Project1/alu.v Line: 13
+    Warning (12110): Net "res[4][1]" is missing source, defaulting to GND File: C:/Project1/alu.v Line: 13
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "res[4][31]" is missing source, defaulting to GND File: C:/Project1/alu.v Line: 13
+    Warning (12110): Net "res[4][30]" is missing source, defaulting to GND File: C:/Project1/alu.v Line: 13
+    Warning (12110): Net "res[4][29]" is missing source, defaulting to GND File: C:/Project1/alu.v Line: 13
+    Warning (12110): Net "res[4][28]" is missing source, defaulting to GND File: C:/Project1/alu.v Line: 13
+    Warning (12110): Net "res[4][27]" is missing source, defaulting to GND File: C:/Project1/alu.v Line: 13
+    Warning (12110): Net "res[4][26]" is missing source, defaulting to GND File: C:/Project1/alu.v Line: 13
+    Warning (12110): Net "res[4][25]" is missing source, defaulting to GND File: C:/Project1/alu.v Line: 13
+    Warning (12110): Net "res[4][24]" is missing source, defaulting to GND File: C:/Project1/alu.v Line: 13
+    Warning (12110): Net "res[4][23]" is missing source, defaulting to GND File: C:/Project1/alu.v Line: 13
+    Warning (12110): Net "res[4][22]" is missing source, defaulting to GND File: C:/Project1/alu.v Line: 13
+    Warning (12110): Net "res[4][21]" is missing source, defaulting to GND File: C:/Project1/alu.v Line: 13
+    Warning (12110): Net "res[4][20]" is missing source, defaulting to GND File: C:/Project1/alu.v Line: 13
+    Warning (12110): Net "res[4][19]" is missing source, defaulting to GND File: C:/Project1/alu.v Line: 13
+    Warning (12110): Net "res[4][18]" is missing source, defaulting to GND File: C:/Project1/alu.v Line: 13
+    Warning (12110): Net "res[4][17]" is missing source, defaulting to GND File: C:/Project1/alu.v Line: 13
+    Warning (12110): Net "res[4][16]" is missing source, defaulting to GND File: C:/Project1/alu.v Line: 13
+    Warning (12110): Net "res[4][15]" is missing source, defaulting to GND File: C:/Project1/alu.v Line: 13
+    Warning (12110): Net "res[4][14]" is missing source, defaulting to GND File: C:/Project1/alu.v Line: 13
+    Warning (12110): Net "res[4][13]" is missing source, defaulting to GND File: C:/Project1/alu.v Line: 13
+    Warning (12110): Net "res[4][12]" is missing source, defaulting to GND File: C:/Project1/alu.v Line: 13
+    Warning (12110): Net "res[4][11]" is missing source, defaulting to GND File: C:/Project1/alu.v Line: 13
+    Warning (12110): Net "res[4][10]" is missing source, defaulting to GND File: C:/Project1/alu.v Line: 13
+    Warning (12110): Net "res[4][9]" is missing source, defaulting to GND File: C:/Project1/alu.v Line: 13
+    Warning (12110): Net "res[4][8]" is missing source, defaulting to GND File: C:/Project1/alu.v Line: 13
+    Warning (12110): Net "res[4][7]" is missing source, defaulting to GND File: C:/Project1/alu.v Line: 13
+    Warning (12110): Net "res[4][6]" is missing source, defaulting to GND File: C:/Project1/alu.v Line: 13
+    Warning (12110): Net "res[4][5]" is missing source, defaulting to GND File: C:/Project1/alu.v Line: 13
+    Warning (12110): Net "res[4][4]" is missing source, defaulting to GND File: C:/Project1/alu.v Line: 13
+    Warning (12110): Net "res[4][3]" is missing source, defaulting to GND File: C:/Project1/alu.v Line: 13
+    Warning (12110): Net "res[4][2]" is missing source, defaulting to GND File: C:/Project1/alu.v Line: 13
+    Warning (12110): Net "res[4][1]" is missing source, defaulting to GND File: C:/Project1/alu.v Line: 13
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "res[4][31]" is missing source, defaulting to GND File: C:/Project1/alu.v Line: 13
+    Warning (12110): Net "res[4][30]" is missing source, defaulting to GND File: C:/Project1/alu.v Line: 13
+    Warning (12110): Net "res[4][29]" is missing source, defaulting to GND File: C:/Project1/alu.v Line: 13
+    Warning (12110): Net "res[4][28]" is missing source, defaulting to GND File: C:/Project1/alu.v Line: 13
+    Warning (12110): Net "res[4][27]" is missing source, defaulting to GND File: C:/Project1/alu.v Line: 13
+    Warning (12110): Net "res[4][26]" is missing source, defaulting to GND File: C:/Project1/alu.v Line: 13
+    Warning (12110): Net "res[4][25]" is missing source, defaulting to GND File: C:/Project1/alu.v Line: 13
+    Warning (12110): Net "res[4][24]" is missing source, defaulting to GND File: C:/Project1/alu.v Line: 13
+    Warning (12110): Net "res[4][23]" is missing source, defaulting to GND File: C:/Project1/alu.v Line: 13
+    Warning (12110): Net "res[4][22]" is missing source, defaulting to GND File: C:/Project1/alu.v Line: 13
+    Warning (12110): Net "res[4][21]" is missing source, defaulting to GND File: C:/Project1/alu.v Line: 13
+    Warning (12110): Net "res[4][20]" is missing source, defaulting to GND File: C:/Project1/alu.v Line: 13
+    Warning (12110): Net "res[4][19]" is missing source, defaulting to GND File: C:/Project1/alu.v Line: 13
+    Warning (12110): Net "res[4][18]" is missing source, defaulting to GND File: C:/Project1/alu.v Line: 13
+    Warning (12110): Net "res[4][17]" is missing source, defaulting to GND File: C:/Project1/alu.v Line: 13
+    Warning (12110): Net "res[4][16]" is missing source, defaulting to GND File: C:/Project1/alu.v Line: 13
+    Warning (12110): Net "res[4][15]" is missing source, defaulting to GND File: C:/Project1/alu.v Line: 13
+    Warning (12110): Net "res[4][14]" is missing source, defaulting to GND File: C:/Project1/alu.v Line: 13
+    Warning (12110): Net "res[4][13]" is missing source, defaulting to GND File: C:/Project1/alu.v Line: 13
+    Warning (12110): Net "res[4][12]" is missing source, defaulting to GND File: C:/Project1/alu.v Line: 13
+    Warning (12110): Net "res[4][11]" is missing source, defaulting to GND File: C:/Project1/alu.v Line: 13
+    Warning (12110): Net "res[4][10]" is missing source, defaulting to GND File: C:/Project1/alu.v Line: 13
+    Warning (12110): Net "res[4][9]" is missing source, defaulting to GND File: C:/Project1/alu.v Line: 13
+    Warning (12110): Net "res[4][8]" is missing source, defaulting to GND File: C:/Project1/alu.v Line: 13
+    Warning (12110): Net "res[4][7]" is missing source, defaulting to GND File: C:/Project1/alu.v Line: 13
+    Warning (12110): Net "res[4][6]" is missing source, defaulting to GND File: C:/Project1/alu.v Line: 13
+    Warning (12110): Net "res[4][5]" is missing source, defaulting to GND File: C:/Project1/alu.v Line: 13
+    Warning (12110): Net "res[4][4]" is missing source, defaulting to GND File: C:/Project1/alu.v Line: 13
+    Warning (12110): Net "res[4][3]" is missing source, defaulting to GND File: C:/Project1/alu.v Line: 13
+    Warning (12110): Net "res[4][2]" is missing source, defaulting to GND File: C:/Project1/alu.v Line: 13
+    Warning (12110): Net "res[4][1]" is missing source, defaulting to GND File: C:/Project1/alu.v Line: 13
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "res[4][31]" is missing source, defaulting to GND File: C:/Project1/alu.v Line: 13
+    Warning (12110): Net "res[4][30]" is missing source, defaulting to GND File: C:/Project1/alu.v Line: 13
+    Warning (12110): Net "res[4][29]" is missing source, defaulting to GND File: C:/Project1/alu.v Line: 13
+    Warning (12110): Net "res[4][28]" is missing source, defaulting to GND File: C:/Project1/alu.v Line: 13
+    Warning (12110): Net "res[4][27]" is missing source, defaulting to GND File: C:/Project1/alu.v Line: 13
+    Warning (12110): Net "res[4][26]" is missing source, defaulting to GND File: C:/Project1/alu.v Line: 13
+    Warning (12110): Net "res[4][25]" is missing source, defaulting to GND File: C:/Project1/alu.v Line: 13
+    Warning (12110): Net "res[4][24]" is missing source, defaulting to GND File: C:/Project1/alu.v Line: 13
+    Warning (12110): Net "res[4][23]" is missing source, defaulting to GND File: C:/Project1/alu.v Line: 13
+    Warning (12110): Net "res[4][22]" is missing source, defaulting to GND File: C:/Project1/alu.v Line: 13
+    Warning (12110): Net "res[4][21]" is missing source, defaulting to GND File: C:/Project1/alu.v Line: 13
+    Warning (12110): Net "res[4][20]" is missing source, defaulting to GND File: C:/Project1/alu.v Line: 13
+    Warning (12110): Net "res[4][19]" is missing source, defaulting to GND File: C:/Project1/alu.v Line: 13
+    Warning (12110): Net "res[4][18]" is missing source, defaulting to GND File: C:/Project1/alu.v Line: 13
+    Warning (12110): Net "res[4][17]" is missing source, defaulting to GND File: C:/Project1/alu.v Line: 13
+    Warning (12110): Net "res[4][16]" is missing source, defaulting to GND File: C:/Project1/alu.v Line: 13
+    Warning (12110): Net "res[4][15]" is missing source, defaulting to GND File: C:/Project1/alu.v Line: 13
+    Warning (12110): Net "res[4][14]" is missing source, defaulting to GND File: C:/Project1/alu.v Line: 13
+    Warning (12110): Net "res[4][13]" is missing source, defaulting to GND File: C:/Project1/alu.v Line: 13
+    Warning (12110): Net "res[4][12]" is missing source, defaulting to GND File: C:/Project1/alu.v Line: 13
+    Warning (12110): Net "res[4][11]" is missing source, defaulting to GND File: C:/Project1/alu.v Line: 13
+    Warning (12110): Net "res[4][10]" is missing source, defaulting to GND File: C:/Project1/alu.v Line: 13
+    Warning (12110): Net "res[4][9]" is missing source, defaulting to GND File: C:/Project1/alu.v Line: 13
+    Warning (12110): Net "res[4][8]" is missing source, defaulting to GND File: C:/Project1/alu.v Line: 13
+    Warning (12110): Net "res[4][7]" is missing source, defaulting to GND File: C:/Project1/alu.v Line: 13
+    Warning (12110): Net "res[4][6]" is missing source, defaulting to GND File: C:/Project1/alu.v Line: 13
+    Warning (12110): Net "res[4][5]" is missing source, defaulting to GND File: C:/Project1/alu.v Line: 13
+    Warning (12110): Net "res[4][4]" is missing source, defaulting to GND File: C:/Project1/alu.v Line: 13
+    Warning (12110): Net "res[4][3]" is missing source, defaulting to GND File: C:/Project1/alu.v Line: 13
+    Warning (12110): Net "res[4][2]" is missing source, defaulting to GND File: C:/Project1/alu.v Line: 13
+    Warning (12110): Net "res[4][1]" is missing source, defaulting to GND File: C:/Project1/alu.v Line: 13
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "res[4][31]" is missing source, defaulting to GND File: C:/Project1/alu.v Line: 13
+    Warning (12110): Net "res[4][30]" is missing source, defaulting to GND File: C:/Project1/alu.v Line: 13
+    Warning (12110): Net "res[4][29]" is missing source, defaulting to GND File: C:/Project1/alu.v Line: 13
+    Warning (12110): Net "res[4][28]" is missing source, defaulting to GND File: C:/Project1/alu.v Line: 13
+    Warning (12110): Net "res[4][27]" is missing source, defaulting to GND File: C:/Project1/alu.v Line: 13
+    Warning (12110): Net "res[4][26]" is missing source, defaulting to GND File: C:/Project1/alu.v Line: 13
+    Warning (12110): Net "res[4][25]" is missing source, defaulting to GND File: C:/Project1/alu.v Line: 13
+    Warning (12110): Net "res[4][24]" is missing source, defaulting to GND File: C:/Project1/alu.v Line: 13
+    Warning (12110): Net "res[4][23]" is missing source, defaulting to GND File: C:/Project1/alu.v Line: 13
+    Warning (12110): Net "res[4][22]" is missing source, defaulting to GND File: C:/Project1/alu.v Line: 13
+    Warning (12110): Net "res[4][21]" is missing source, defaulting to GND File: C:/Project1/alu.v Line: 13
+    Warning (12110): Net "res[4][20]" is missing source, defaulting to GND File: C:/Project1/alu.v Line: 13
+    Warning (12110): Net "res[4][19]" is missing source, defaulting to GND File: C:/Project1/alu.v Line: 13
+    Warning (12110): Net "res[4][18]" is missing source, defaulting to GND File: C:/Project1/alu.v Line: 13
+    Warning (12110): Net "res[4][17]" is missing source, defaulting to GND File: C:/Project1/alu.v Line: 13
+    Warning (12110): Net "res[4][16]" is missing source, defaulting to GND File: C:/Project1/alu.v Line: 13
+    Warning (12110): Net "res[4][15]" is missing source, defaulting to GND File: C:/Project1/alu.v Line: 13
+    Warning (12110): Net "res[4][14]" is missing source, defaulting to GND File: C:/Project1/alu.v Line: 13
+    Warning (12110): Net "res[4][13]" is missing source, defaulting to GND File: C:/Project1/alu.v Line: 13
+    Warning (12110): Net "res[4][12]" is missing source, defaulting to GND File: C:/Project1/alu.v Line: 13
+    Warning (12110): Net "res[4][11]" is missing source, defaulting to GND File: C:/Project1/alu.v Line: 13
+    Warning (12110): Net "res[4][10]" is missing source, defaulting to GND File: C:/Project1/alu.v Line: 13
+    Warning (12110): Net "res[4][9]" is missing source, defaulting to GND File: C:/Project1/alu.v Line: 13
+    Warning (12110): Net "res[4][8]" is missing source, defaulting to GND File: C:/Project1/alu.v Line: 13
+    Warning (12110): Net "res[4][7]" is missing source, defaulting to GND File: C:/Project1/alu.v Line: 13
+    Warning (12110): Net "res[4][6]" is missing source, defaulting to GND File: C:/Project1/alu.v Line: 13
+    Warning (12110): Net "res[4][5]" is missing source, defaulting to GND File: C:/Project1/alu.v Line: 13
+    Warning (12110): Net "res[4][4]" is missing source, defaulting to GND File: C:/Project1/alu.v Line: 13
+    Warning (12110): Net "res[4][3]" is missing source, defaulting to GND File: C:/Project1/alu.v Line: 13
+    Warning (12110): Net "res[4][2]" is missing source, defaulting to GND File: C:/Project1/alu.v Line: 13
+    Warning (12110): Net "res[4][1]" is missing source, defaulting to GND File: C:/Project1/alu.v Line: 13
+Warning (12241): 4 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Info (286030): Timing-Driven Synthesis is running
+Info (17049): 2 registers lost all their fanouts during netlist optimizations.
+Info (144001): Generated suppressed messages file C:/Project1/output_files/Project1.map.smsg
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 6 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "cin[1]" File: C:/Project1/alu.v Line: 8
+    Warning (15610): No output dependent on input pin "cin[2]" File: C:/Project1/alu.v Line: 8
+    Warning (15610): No output dependent on input pin "CLK[1]" File: C:/Project1/alu.v Line: 9
+    Warning (15610): No output dependent on input pin "CLK[2]" File: C:/Project1/alu.v Line: 9
+    Warning (15610): No output dependent on input pin "reset[1]" File: C:/Project1/alu.v Line: 11
+    Warning (15610): No output dependent on input pin "reset[2]" File: C:/Project1/alu.v Line: 11
+Info (21057): Implemented 493 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 76 input pins
+    Info (21059): Implemented 33 output pins
+    Info (21061): Implemented 384 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 176 warnings
+    Info: Peak virtual memory: 4904 megabytes
+    Info: Processing ended: Sun Dec 10 23:01:57 2023
+    Info: Elapsed time: 00:00:12
+    Info: Total CPU time (on all processors): 00:00:29
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in C:/Project1/output_files/Project1.map.smsg.
+
+

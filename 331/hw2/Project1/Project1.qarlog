@@ -1,0 +1,55 @@
+Quartus Prime Archive log --	C:/Project1/Project1.qarlog
+
+Archive:	C:/Project1/Project1.qar
+Date:		Sun Dec 10 21:48:20 2023
+Quartus Prime		20.1.0 Build 711 06/05/2020 SJ Lite Edition
+
+	=========== Files Selected: ===========
+C:/Project1/Project1.qpf
+C:/Project1/Project1.qsf
+C:/Project1/alu.v
+C:/Project1/and41_32bit.v
+C:/Project1/and_16bit.v
+C:/Project1/and_32bit.v
+C:/Project1/and_4bit.v
+C:/Project1/and_8bit.v
+C:/Project1/cla_16bit.v
+C:/Project1/cla_2bit.v
+C:/Project1/cla_32bit.v
+C:/Project1/cla_4bit.v
+C:/Project1/cla_8bit.v
+C:/Project1/comparator_16bit.v
+C:/Project1/comparator_2bit.v
+C:/Project1/comparator_32bit.v
+C:/Project1/comparator_4bit.v
+C:/Project1/comparator_8bit.v
+C:/Project1/less_than_32bit.v
+C:/Project1/mod.v
+C:/Project1/mod_cu.v
+C:/Project1/mod_dp.v
+C:/Project1/mux81_32bit.v
+C:/Project1/my_test_bench.v
+C:/Project1/nor_16bit.v
+C:/Project1/nor_32bit.v
+C:/Project1/nor_4bit.v
+C:/Project1/nor_8bit.v
+C:/Project1/not_16bit.v
+C:/Project1/not_32bit.v
+C:/Project1/not_4bit.v
+C:/Project1/not_8bit.v
+C:/Project1/or81_32bit.v
+C:/Project1/or_16bit.v
+C:/Project1/or_32bit.v
+C:/Project1/or_4bit.v
+C:/Project1/or_8bit.v
+C:/Project1/prop_gen_generator.v
+C:/Project1/subtractor_32bit.v
+C:/Project1/xor_16bit.v
+C:/Project1/xor_32bit.v
+C:/Project1/xor_4bit.v
+C:/Project1/xor_8bit.v
+c:/intelfpga_lite/20.1/quartus/bin64/assignment_defaults.qdf
+	======= Total: 44 files to archive =======
+
+	================ Status: ===============
+All files archived successfully.

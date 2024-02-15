@@ -1,0 +1,8 @@
+vendor_name = ModelSim
+source_file = 1, C:/Project1/my_and.v
+source_file = 1, C:/Project1/db/Project1.cbx.xml
+design_name = my_and
+instance = comp, \y~output , y~output, my_and, 1
+instance = comp, \b~input , b~input, my_and, 1
+instance = comp, \a~input , a~input, my_and, 1
+instance = comp, \~QUARTUS_CREATED_GND~I , ~QUARTUS_CREATED_GND~I, my_and, 1

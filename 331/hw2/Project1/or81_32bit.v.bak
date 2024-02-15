@@ -1,0 +1,57 @@
+module or81_8bit(
+	output [7:0] out,
+	input [7:0] ain,
+	input [7:0] bin,
+	input [7:0] cin,
+	input [7:0] din,
+	input [7:0] ein,
+	input [7:0] fin,
+	input [7:0] gin,
+	input [7:0] hin
+);
+
+	wire [7:0] w [7:0];
+
+	my_or or1(
+		.out(w[0]),
+		.ain(ain),
+		.bin(bin)
+	);
+	
+	my_or or2(
+		.out(w[1]),
+		.ain(w[0]),
+		.bin(cin)
+	);
+	
+	my_or or3(
+		.out(w[2]),
+		.ain(w[1]),
+		.bin(din)
+	);
+	
+	my_or or4(
+		.out(w[3]),
+		.ain(w[2]),
+		.bin(ein)
+	);
+	
+	my_or or5(
+		.out(w[4]),
+		.ain(w[3]),
+		.bin(fin)
+	);
+	
+	my_or or6(
+		.out(w[5]),
+		.ain(w[4]),
+		.bin(gin)
+	);
+	
+	my_or or7(
+		.out(out),
+		.ain(w[5]),
+		.bin(hin)
+	);
+
+endmodule

@@ -1,0 +1,12 @@
+module comparator_4bit (
+	output
+		greater,
+		less,
+		equal,
+	input [3:0] ain,
+	input [3:0] bin
+);
+
+
+
+endmodule
