@@ -1,0 +1,40 @@
+module or_32bit (
+	output [31:0] out,
+	input [31:0] ain,
+	input [31:0] bin
+);
+
+	my_and (out[0], ain[0], bin[0]);
+	my_and (out[1], ain[1], bin[1]);
+	my_and (out[2], ain[2], bin[2]);
+	my_and (out[3], ain[3], bin[3]);
+	my_and (out[4], ain[4], bin[4]);
+	my_and (out[5], ain[5], bin[5]);
+	my_and (out[6], ain[6], bin[6]);
+	my_and (out[7], ain[7], bin[7]);
+	my_and (out[8], ain[8], bin[8]);
+	my_and (out[9], ain[9], bin[9]);
+	my_and (out[10], ain[10], bin[10]);
+	my_and (out[11], ain[11], bin[11]);
+	my_and (out[12], ain[12], bin[12]);
+	my_and (out[13], ain[13], bin[13]);
+	my_and (out[14], ain[14], bin[14]);
+	my_and (out[15], ain[15], bin[15]);
+	my_and (out[16], ain[16], bin[16]);
+	my_and (out[17], ain[17], bin[17]);
+	my_and (out[18], ain[18], bin[18]);
+	my_and (out[19], ain[19], bin[19]);
+	my_and (out[20], ain[20], bin[20]);
+	my_and (out[21], ain[21], bin[21]);
+	my_and (out[22], ain[22], bin[22]);
+	my_and (out[23], ain[23], bin[23]);
+	my_and (out[24], ain[24], bin[24]);
+	my_and (out[25], ain[25], bin[25]);
+	my_and (out[26], ain[26], bin[26]);
+	my_and (out[27], ain[27], bin[27]);
+	my_and (out[28], ain[28], bin[28]);
+	my_and (out[29], ain[29], bin[29]);
+	my_and (out[30], ain[30], bin[30]);
+	my_and (out[31], ain[31], bin[31]);
+	
+endmodule

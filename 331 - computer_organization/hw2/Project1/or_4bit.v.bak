@@ -1,0 +1,31 @@
+module and_4bit (
+	output [3:0] out,
+	input [3:0] ain,
+	input [3:0] bin
+);
+
+	my_and (
+		.out(out[0]),
+		.ain(ain[0]),
+		.bin(bin[0])
+	);
+	
+	my_and (
+		.out(out[1]),
+		.ain(ain[1]),
+		.bin(bin[1])
+	);
+	
+	my_and (
+		.out(out[2]),
+		.ain(ain[2]),
+		.bin(bin[2])
+	);
+	
+	my_and (
+		.out(out[3]),
+		.ain(ain[3]),
+		.bin(bin[3])
+	);
+
+endmodule

@@ -1,0 +1,12 @@
+module cla_4bit (
+	output [3:0] sum,
+	output cout,
+	input [3:0] ain,
+	input [3:0] bin,
+	input cin
+);
+	
+	wire [3:0] prop;
+	wire [3:0] gen;
+	wire [2:0] carry;
+	wire [9:0] tmp;

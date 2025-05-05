@@ -1,0 +1,21 @@
+module my_test_bench ();
+
+	reg
+		a,
+		b;
+	
+	wire
+		result;
+
+		my_xor xor1(
+			.out(result),
+			.ain(a),
+			.bin(b)
+		);
+		
+		initial begin
+			#0 a = 0; b = 0;
+			$display ("%d xor %d = %d", a, b, result);
+		end
+		
+endmodule
