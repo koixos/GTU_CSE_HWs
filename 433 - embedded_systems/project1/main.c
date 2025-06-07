@@ -40,8 +40,10 @@ const int Gy[3][3] = {
     {26, 26, 27, 29, 27, 29, 93, 161, 70, 158, 159, 153, 149, 150, 80, 143},
 };*/
 
-void convert(int [WIDTH][HEIGHT], const char *);  // Function to convert the image data to PGM format
-void read(int [WIDTH][HEIGHT], const char *);   // Function to decode the PGM image
+// Function to convert the image data to PGM format
+void convert(int [WIDTH][HEIGHT], const char *); 
+// Function to decode the PGM image
+void read(int [WIDTH][HEIGHT], const char *);   
 
 int main(void) {
     int img[WIDTH][HEIGHT];
