@@ -1,0 +1,205 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Workspace/emb/module/simulation/questa
+vcontrol_unit
+Z1 !s110 1747421096
+!i10b 1
+!s100 oKRk@X52aB]X^1M0X9VW`3
+Z2 !s11b Dg1SIo80bB@j0V0VzS_@n1
+I1LF2l1UoeHMG6n37lg1_=2
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1747421040
+8C:/Workspace/emb/module/control_unit.v
+FC:/Workspace/emb/module/control_unit.v
+!i122 5
+L0 1 217
+Z4 OV;L;2020.1;71
+r1
+!s85 0
+31
+Z5 !s108 1747421096.000000
+!s107 C:/Workspace/emb/module/control_unit.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Workspace/emb/module|C:/Workspace/emb/module/control_unit.v|
+!i113 1
+Z6 o-vlog01compat -work work
+Z7 !s92 -vlog01compat -work work +incdir+C:/Workspace/emb/module
+Z8 tCvgOpt 0
+vdatapath
+Z9 !s110 1747421095
+!i10b 1
+!s100 Ii1eXR1_cCR_gEe[<o>j;2
+R2
+IA3S3<@H92l51GZCX4cCg`0
+R3
+R0
+w1747415519
+8C:/Workspace/emb/module/datapath.v
+FC:/Workspace/emb/module/datapath.v
+!i122 0
+L0 1 184
+R4
+r1
+!s85 0
+31
+Z10 !s108 1747421095.000000
+!s107 C:/Workspace/emb/module/datapath.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Workspace/emb/module|C:/Workspace/emb/module/datapath.v|
+!i113 1
+R6
+R7
+R8
+vedg_ram_dual
+R1
+!i10b 1
+!s100 j=n03QJOcKA6`VMhPCdDb1
+R2
+IPPU;fb^3=>LRidTbS;>780
+R3
+R0
+w1747316445
+8C:/Workspace/emb/module/edg_ram_dual.v
+FC:/Workspace/emb/module/edg_ram_dual.v
+!i122 2
+L0 40 77
+R4
+r1
+!s85 0
+31
+R10
+!s107 C:/Workspace/emb/module/edg_ram_dual.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Workspace/emb/module|C:/Workspace/emb/module/edg_ram_dual.v|
+!i113 1
+R6
+R7
+R8
+vedge_detector_tb
+R1
+!i10b 1
+!s100 a2fzKD:c_CY<6LO;a27T=2
+R2
+Idb>:GhmX`0kfaCafd>k=C2
+R3
+R0
+w1747420952
+8C:/Workspace/emb/module/edge_detector_tb.v
+FC:/Workspace/emb/module/edge_detector_tb.v
+!i122 7
+L0 3 66
+R4
+r1
+!s85 0
+31
+R5
+!s107 C:/Workspace/emb/module/edge_detector_tb.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Workspace/emb/module|C:/Workspace/emb/module/edge_detector_tb.v|
+!i113 1
+R6
+R7
+R8
+vGx
+R1
+!i10b 1
+!s100 C_YAiKbBTWgjiR`?;<nHO0
+R2
+Ic;m6NVkcLDOo<WN];8Ud32
+R3
+R0
+w1747213704
+8C:/Workspace/emb/module/Gx.v
+FC:/Workspace/emb/module/Gx.v
+!i122 3
+Z11 L0 40 61
+R4
+r1
+!s85 0
+31
+R5
+!s107 C:/Workspace/emb/module/Gx.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Workspace/emb/module|C:/Workspace/emb/module/Gx.v|
+!i113 1
+R6
+R7
+R8
+n@gx
+vGy
+R1
+!i10b 1
+!s100 Y8TEf81nahll20=<kEFob1
+R2
+Iim>M;@^OciEme@=AbHUo90
+R3
+R0
+w1747213746
+8C:/Workspace/emb/module/Gy.v
+FC:/Workspace/emb/module/Gy.v
+!i122 4
+R11
+R4
+r1
+!s85 0
+31
+R5
+!s107 C:/Workspace/emb/module/Gy.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Workspace/emb/module|C:/Workspace/emb/module/Gy.v|
+!i113 1
+R6
+R7
+R8
+n@gy
+vimg_rom
+R9
+!i10b 1
+!s100 16:j6]9d``dOSg:9b3A4e3
+R2
+IULUSN?`U9z8mggziH=KP]3
+R3
+R0
+w1747157752
+8C:/Workspace/emb/module/img_rom.v
+FC:/Workspace/emb/module/img_rom.v
+!i122 1
+R11
+R4
+r1
+!s85 0
+31
+R10
+!s107 C:/Workspace/emb/module/img_rom.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Workspace/emb/module|C:/Workspace/emb/module/img_rom.v|
+!i113 1
+R6
+R7
+R8
+vmy_module
+R1
+!i10b 1
+!s100 NcfNz:I4oiOaZ=nVgf;`H1
+R2
+IcdzDLmUP:dEE<GGDT6Hg71
+R3
+R0
+w1747415305
+8C:/Workspace/emb/module/my_module.v
+FC:/Workspace/emb/module/my_module.v
+!i122 6
+L0 1 124
+R4
+r1
+!s85 0
+31
+R5
+!s107 C:/Workspace/emb/module/my_module.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Workspace/emb/module|C:/Workspace/emb/module/my_module.v|
+!i113 1
+R6
+R7
+R8

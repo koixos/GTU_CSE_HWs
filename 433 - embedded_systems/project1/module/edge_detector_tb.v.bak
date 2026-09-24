@@ -1,0 +1,55 @@
+`timescale 1ns/1ps
+
+module edge_detector_tb;
+
+  reg clk;
+  reg rst;
+  reg go;
+
+  my_module gcd (
+    .clk(clk),
+    .rst(rst),
+	 .go(0)
+  );
+
+  always #10 clk = ~clk;
+
+  // Simulation control
+  initial begin
+    $display("Starting simulation...");
+    
+    // Init
+    clk = 0;
+    rst = 1;
+
+    // Reset pulse
+    #50;
+    rst = 0;
+
+    // Simulate for a fixed time
+    // You can use a flag like 'done' or FSM state check
+    #1000000;
+
+    // Dump RAM contents
+    dump_edge_ram();
+
+    // Finish
+    $display("Simulation complete.");
+    $stop;
+  end
+
+  // Task to dump edge RAM contents to file
+  task dump_edge_ram;
+    integer f;
+    integer i;
+    begin
+      $display("Dumping edge RAM contents to edge_ram_output.txt");
+      f = $fopen("edge_ram_output.txt", "w");
+      for (i = 0; i < 65536; i = i + 1) begin
+        $fdisplay(f, "%d : %d", i, uut.DP.my_edg.mem[i]);
+      end
+      $fclose(f);
+    end
+  endtask
+
+endmodule

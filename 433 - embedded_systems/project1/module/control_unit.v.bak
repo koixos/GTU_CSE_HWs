@@ -1,0 +1,35 @@
+module control_unit(
+	input clk,
+	input wire go;
+	input wire rst;
+	input wire lt;
+	input wire lteq;
+	output reg we,
+	output reg ldX,
+	output reg ldY,
+	output reg ldI,
+	output reg ldJ,
+	output reg ldMagnit,
+	output reg ldImgAddr,
+	output reg ldGxAddr,
+	output reg ldGyAddr,
+	output reg ldSumx,
+	output reg ldSumy,
+	output reg Sx,
+	output reg Sy,
+	output reg Si,
+	output reg Sj,
+	output reg Ssumxop,
+	output reg Ssumyop,
+	output reg Ssumx,
+	output reg Ssumy,
+	output reg Smult,
+	output reg [1:0] Ss,
+	output reg [2:0] Scompl,
+	output reg [2:0] Scompr,
+	output reg Sedg,
+);
+
+
+
+endmodule

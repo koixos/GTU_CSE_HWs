@@ -1,0 +1,15 @@
+transcript on
+if {[file exists rtl_work]} {
+	vdel -lib rtl_work -all
+}
+vlib rtl_work
+vmap work rtl_work
+
+vlog -vlog01compat -work work +incdir+C:/Workspace/emb/module {C:/Workspace/emb/module/datapath.v}
+vlog -vlog01compat -work work +incdir+C:/Workspace/emb/module {C:/Workspace/emb/module/img_rom.v}
+vlog -vlog01compat -work work +incdir+C:/Workspace/emb/module {C:/Workspace/emb/module/edg_ram_dual.v}
+vlog -vlog01compat -work work +incdir+C:/Workspace/emb/module {C:/Workspace/emb/module/Gx.v}
+vlog -vlog01compat -work work +incdir+C:/Workspace/emb/module {C:/Workspace/emb/module/Gy.v}
+vlog -vlog01compat -work work +incdir+C:/Workspace/emb/module {C:/Workspace/emb/module/control_unit.v}
+vlog -vlog01compat -work work +incdir+C:/Workspace/emb/module {C:/Workspace/emb/module/my_module.v}
+

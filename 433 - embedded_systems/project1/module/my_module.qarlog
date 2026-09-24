@@ -1,0 +1,36 @@
+Quartus Prime Archive log --	C:/Workspace/emb/module/my_module.qarlog
+
+Archive:	C:/Workspace/emb/module/my_module.qar
+Date:		Fri May 16 22:40:23 2025
+Quartus Prime		23.1std.1 Build 993 05/14/2024 SC Lite Edition
+
+	=========== Files Selected: ===========
+C:/Workspace/emb/module/Gx.qip
+C:/Workspace/emb/module/Gx.v
+C:/Workspace/emb/module/Gx_bb.v
+C:/Workspace/emb/module/Gy.qip
+C:/Workspace/emb/module/Gy.v
+C:/Workspace/emb/module/Gy_bb.v
+C:/Workspace/emb/module/control_unit.v
+C:/Workspace/emb/module/datapath.v
+C:/Workspace/emb/module/datapath_tb.v
+C:/Workspace/emb/module/edg_ram_dual.qip
+C:/Workspace/emb/module/edg_ram_dual.v
+C:/Workspace/emb/module/edg_ram_dual_bb.v
+C:/Workspace/emb/module/edge_detector.v
+C:/Workspace/emb/module/edge_detector_tb.v
+C:/Workspace/emb/module/edges.mif
+C:/Workspace/emb/module/gx.mif
+C:/Workspace/emb/module/gy.mif
+C:/Workspace/emb/module/img_rom.qip
+C:/Workspace/emb/module/img_rom.v
+C:/Workspace/emb/module/img_rom_bb.v
+C:/Workspace/emb/module/my_module.qpf
+C:/Workspace/emb/module/my_module.qsf
+C:/Workspace/emb/module/my_module.v
+C:/Workspace/emb/module/my_module_assignment_defaults.qdf
+C:/Workspace/emb/module/woman.mif
+	======= Total: 25 files to archive =======
+
+	================ Status: ===============
+All files archived successfully.
